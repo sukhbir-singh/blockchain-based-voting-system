@@ -180,10 +180,51 @@ position: relative;
 }
  
 .cont_centrar_dashboard{
-  position: absolute;
-  width: 80%;
-  top:50%;
-  margin-top: -250px;
+  position: relative;
+  width: 70%;
+  height: 450px;
+  margin: 0 auto;
+  margin-top: 100px;
   background: white;
   border-radius: 8px;
+}
+
+#real_time_voting{
+  background: green;
+  width: 200px;
+  height: 100px;
+  float:left;
+  height: 100%;
+  width: 50%;
+}
+
+#user_information{
+  background: orange;
+  width: 200px;
+  height: 100px;
+  float:left;
+  width: 50%;
+  height: 50%;  
+}
+
+#voting_history{
+  background: yellow;
+  width: 200px;
+  height: 100px;
+  float:left;  
+  width: 50%;
+  height: 50%;
+}
+
+#logout_btn{
+  position: relative;
+  width: 100px;
+  padding: 7px;
+  top: 50%;
+  left: 50%;
+  margin: 20px 0 0 -50px;
+}
+
+#user_information p{
+  text-align: center;
 }

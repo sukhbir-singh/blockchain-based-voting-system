@@ -9,10 +9,21 @@
 <body>
   <div class="cont_principal">
   <div class="cont_centrar_dashboard">
-  	Dashboard 
-  	 <form action="/logout" method="post" onsubmit="return formValidation();">
-  	 	<button onclick="submit();">Logout</button>
-  	 </form>
+  	
+  	<div id="real_time_voting">  		
+  	</div>
+  	<div id="user_information">
+  		<p style="margin-top: 50px;"><u>Your Information</u></p><br>
+  		<p>Full Name: <%= @user.full_name %></p>
+  		<p>Adhaar: <%= @user.adhaar %></p>
+  		<form action="/logout" method="post" onsubmit="return formValidation();">
+	  	 	<button id="logout_btn" onclick="submit();">Logout</button>
+	  	</form>
+  	</div>
+  	<div id="voting_history">
+  		<p>
+  	</div>
+
   </div>
   </div>
 </body>

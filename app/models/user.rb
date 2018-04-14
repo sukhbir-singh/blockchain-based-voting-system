@@ -23,6 +23,11 @@ class User
   field :contact, type: String
   field :password, type: String
 
+  attr_accessor :full_name
+  attr_accessor :adhaar
+  attr_accessor :email
+  attr_accessor :area
+
   def validate_password
     unless password.length >= 6
       errors.add(:password,'must be atleast 6 characters long')
