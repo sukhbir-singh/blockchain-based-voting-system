@@ -2,16 +2,21 @@ class HomeController < ApplicationController
    skip_before_action :verify_authenticity_token
 
    def index
-      render template: 'home'
+      if session[:current_user].blank?
+         render template: 'home'
+      else
+         render template: 'dashboard'
+      end
    end
 
    def signup
       unless params[:full_name].blank? || params[:email].blank? || params[:adhaar].blank? || params[:area].blank? || params[:dob].blank? || params[:contact].blank? || params[:password].blank?
-         
+   
          u= User.new(full_name: params[:full_name], email: params[:email], adhaar: params[:adhaar], area: params[:area], dob: params[:dob], contact: params[:contact], password: params[:password], image: params[:image] )
          
          if u.save
-            render template: 'dashboard'      
+            session[:current_user]=u
+            render template: 'dashboard'
          else
             render template: 'home'
          end         
@@ -24,6 +29,7 @@ class HomeController < ApplicationController
       unless params[:email].blank? || params[:password].blank? 
          u = User.where(email: params[:email], password: params[:password])
          if u.count==1
+            session[:current_user]=u
             render template: 'dashboard'      
          else
             render template: 'home'

@@ -3,6 +3,9 @@ Rails.application.routes.draw do
    get '/' => 'home#index'
    get '/signup' => 'home#index'
    get '/login' => 'home#index'
+   get '/logout' => 'home#index'
+   
    post '/signup' => 'home#signup'
    post '/login' => 'home#login'
+   post '/logout' => 'dashboard#logout'
 end

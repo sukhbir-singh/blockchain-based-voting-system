@@ -179,3 +179,11 @@ position: relative;
   transition-delay: 0.8s;
 }
  
+.cont_centrar_dashboard{
+  position: absolute;
+  width: 80%;
+  top:50%;
+  margin-top: -250px;
+  background: white;
+  border-radius: 8px;
+}
