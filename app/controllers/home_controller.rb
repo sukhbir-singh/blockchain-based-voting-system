@@ -20,7 +20,7 @@ class HomeController < ApplicationController
       end
    end
 
-   def login
+   def login      
       unless params[:email].blank? || params[:password].blank? 
          u = User.where(email: params[:email], password: params[:password])
          if u.count==1
