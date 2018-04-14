@@ -13,20 +13,20 @@
     <form action="">
     <div class="cont_tabs_login">
       <ul class='ul_tabs'>
-        <li class="active"><a href="#" onclick="sign_in()">SIGN IN</a>
+        <li class="active" id="signin"><a href="#" onclick="sign_in()">SIGN IN</a>
         <span class="linea_bajo_nom"></span>
         </li>
-        <li><a href="#up" onclick="sign_up()">SIGN UP</a><span class="linea_bajo_nom"></span>
+        <li id="signup" style="cursor:pointer"><a onclick="sign_up()">SIGN UP</a><span class="linea_bajo_nom"></span>
         </li>
       </ul>
       </div>
   <div class="cont_text_inputs">
-      <input type="text" class="input_form_sign " placeholder="NAME" name="name_us" />
+      <input type="text" class="input_form_sign d_block" placeholder="NAME" name="name_us" />
     <input type="text" class="input_form_sign d_block active_inp" placeholder="EMAIL" name="email" />
-    <input type="text" class="input_form_sign d_block active_inp" placeholder="ADHAAR" name="adhaar" />
-    <input type="text" class="input_form_sign d_block active_inp" placeholder="AREA" name="area" />
-    <input type="text" class="input_form_sign d_block active_inp" placeholder="DOB" name="dob" />
-    <input type="text" class="input_form_sign d_block active_inp" placeholder="CONTACT" name="contact" />
+    <input type="text" class="input_form_sign" placeholder="ADHAAR" name="adhaar" />
+    <input type="text" class="input_form_sign" placeholder="AREA" name="area" />
+    <input type="text" class="input_form_sign" placeholder="DOB" name="dob" />
+    <input type="text" class="input_form_sign" placeholder="CONTACT" name="contact" />
     <input type="password" class="input_form_sign d_block  active_inp" placeholder="PASSWORD" name="password" />  
    <input type="password" class="input_form_sign" placeholder="CONFIRM PASSWORD" name="confirm_password" />
       </div>

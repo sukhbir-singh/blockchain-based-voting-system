@@ -17,7 +17,7 @@ background-image: linear-gradient(-87deg, #F2F5F6 0%, #DDE5E8 100%);
   left:50%;
   top:50%;
   margin-left: -160px;
-  margin-top: -280px;
+  margin-top: -250px;
 }
 
 .cont_centrar {
@@ -86,7 +86,7 @@ height: 2px;
 position: relative;
   float: left;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .input_form_sign {
@@ -107,7 +107,7 @@ display: none;
 }
 
 .active_inp {
-  margin: 5% 5% ;  
+  margin: 3% 5% ;  
   padding: 10px 0px;
   opacity: 1;
 height: 5px;
