@@ -1,0 +1,714 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/bin/npm', 'install', '-g', 'web3@0.20.1' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.2
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData web3@0.20.1
+8 silly fetchNamedPackageData web3
+9 silly mapToRegistry name web3
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry http://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'web3',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'web3',
+12 silly mapToRegistry   name: 'web3',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri http://registry.npmjs.org/web3
+14 verbose request uri http://registry.npmjs.org/web3
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 11:35:49 PM
+17 verbose request id 5d187d995eb69101
+18 http request GET http://registry.npmjs.org/web3
+19 http 200 http://registry.npmjs.org/web3
+20 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+20 verbose headers   server: 'UploadServer',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   'last-modified': 'Fri, 13 Apr 2018 14:57:12 GMT',
+20 verbose headers   etag: '"5ad0c548-2f408"',
+20 verbose headers   'x-npm-region': 'Asia-South',
+20 verbose headers   'content-encoding': 'gzip',
+20 verbose headers   'content-length': '13459',
+20 verbose headers   'accept-ranges': 'bytes',
+20 verbose headers   date: 'Sun, 15 Apr 2018 18:05:50 GMT',
+20 verbose headers   via: '1.1 varnish',
+20 verbose headers   age: '6574',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'x-served-by': 'cache-bom18223-BOM',
+20 verbose headers   'x-cache': 'HIT',
+20 verbose headers   'x-cache-hits': '1',
+20 verbose headers   'x-timer': 'S1523815550.150344,VS0,VE0',
+20 verbose headers   vary: 'Accept-Encoding, Accept' }
+21 silly get cb [ 200,
+21 silly get   { 'content-type': 'application/json; charset=UTF-8',
+21 silly get     server: 'UploadServer',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     'last-modified': 'Fri, 13 Apr 2018 14:57:12 GMT',
+21 silly get     etag: '"5ad0c548-2f408"',
+21 silly get     'x-npm-region': 'Asia-South',
+21 silly get     'content-encoding': 'gzip',
+21 silly get     'content-length': '13459',
+21 silly get     'accept-ranges': 'bytes',
+21 silly get     date: 'Sun, 15 Apr 2018 18:05:50 GMT',
+21 silly get     via: '1.1 varnish',
+21 silly get     age: '6574',
+21 silly get     connection: 'keep-alive',
+21 silly get     'x-served-by': 'cache-bom18223-BOM',
+21 silly get     'x-cache': 'HIT',
+21 silly get     'x-cache-hits': '1',
+21 silly get     'x-timer': 'S1523815550.150344,VS0,VE0',
+21 silly get     vary: 'Accept-Encoding, Accept' } ]
+22 verbose get saving web3 to /root/.npm/registry.npmjs.org/web3/.cache.json
+23 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+24 silly install normalizeTree
+25 silly loadCurrentTree Finishing
+26 silly loadIdealTree Starting
+27 silly install loadIdealTree
+28 silly cloneCurrentTree Starting
+29 silly install cloneCurrentTreeToIdealTree
+30 silly cloneCurrentTree Finishing
+31 silly loadShrinkwrap Starting
+32 silly install loadShrinkwrap
+33 silly loadShrinkwrap Finishing
+34 silly loadAllDepsIntoIdealTree Starting
+35 silly install loadAllDepsIntoIdealTree
+36 silly resolveWithNewModule web3@0.20.1 checking installable status
+37 silly cache add args [ 'web3@0.20.1', null ]
+38 verbose cache add spec web3@0.20.1
+39 silly cache add parsed spec Result {
+39 silly cache add   raw: 'web3@0.20.1',
+39 silly cache add   scope: null,
+39 silly cache add   escapedName: 'web3',
+39 silly cache add   name: 'web3',
+39 silly cache add   rawSpec: '0.20.1',
+39 silly cache add   spec: '0.20.1',
+39 silly cache add   type: 'version' }
+40 silly addNamed web3@0.20.1
+41 verbose addNamed "0.20.1" is a plain semver version for web3
+42 silly mapToRegistry name web3
+43 silly mapToRegistry using default registry
+44 silly mapToRegistry registry http://registry.npmjs.org/
+45 silly mapToRegistry data Result {
+45 silly mapToRegistry   raw: 'web3',
+45 silly mapToRegistry   scope: null,
+45 silly mapToRegistry   escapedName: 'web3',
+45 silly mapToRegistry   name: 'web3',
+45 silly mapToRegistry   rawSpec: '',
+45 silly mapToRegistry   spec: 'latest',
+45 silly mapToRegistry   type: 'tag' }
+46 silly mapToRegistry uri http://registry.npmjs.org/web3
+47 verbose addNameVersion registry:http://registry.npmjs.org/web3 not in flight; fetching
+48 verbose get http://registry.npmjs.org/web3 not expired, no request
+49 silly mapToRegistry name web3
+50 silly mapToRegistry using default registry
+51 silly mapToRegistry registry http://registry.npmjs.org/
+52 silly mapToRegistry data Result {
+52 silly mapToRegistry   raw: 'web3',
+52 silly mapToRegistry   scope: null,
+52 silly mapToRegistry   escapedName: 'web3',
+52 silly mapToRegistry   name: 'web3',
+52 silly mapToRegistry   rawSpec: '',
+52 silly mapToRegistry   spec: 'latest',
+52 silly mapToRegistry   type: 'tag' }
+53 silly mapToRegistry uri http://registry.npmjs.org/web3
+54 verbose addRemoteTarball http://registry.npmjs.org/web3/-/web3-0.20.1.tgz not in flight; adding
+55 verbose addRemoteTarball [ 'http://registry.npmjs.org/web3/-/web3-0.20.1.tgz',
+55 verbose addRemoteTarball   'fb262e9ad71552167a6af012fdd420de017032f0' ]
+56 info retry fetch attempt 1 at 11:35:50 PM
+57 info attempt registry request try #1 at 11:35:50 PM
+58 http fetch GET http://registry.npmjs.org/web3/-/web3-0.20.1.tgz
+59 http fetch 200 http://registry.npmjs.org/web3/-/web3-0.20.1.tgz
+60 silly fetchAndShaCheck shasum fb262e9ad71552167a6af012fdd420de017032f0
+61 verbose addTmpTarball /tmp/npm-21177-54560bb7/registry.npmjs.org/web3/-/web3-0.20.1.tgz not in flight; adding
+62 verbose addTmpTarball already have metadata; skipping unpack for web3@0.20.1
+63 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+64 silly cache afterAdd web3@0.20.1
+65 verbose afterAdd /root/.npm/web3/0.20.1/package/package.json not in flight; writing
+66 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+67 verbose afterAdd /root/.npm/web3/0.20.1/package/package.json written
+68 silly fetchNamedPackageData crypto-js
+69 silly mapToRegistry name crypto-js
+70 silly mapToRegistry using default registry
+71 silly mapToRegistry registry http://registry.npmjs.org/
+72 silly mapToRegistry data Result {
+72 silly mapToRegistry   raw: 'crypto-js',
+72 silly mapToRegistry   scope: null,
+72 silly mapToRegistry   escapedName: 'crypto-js',
+72 silly mapToRegistry   name: 'crypto-js',
+72 silly mapToRegistry   rawSpec: '',
+72 silly mapToRegistry   spec: 'latest',
+72 silly mapToRegistry   type: 'tag' }
+73 silly mapToRegistry uri http://registry.npmjs.org/crypto-js
+74 silly fetchNamedPackageData utf8
+75 silly mapToRegistry name utf8
+76 silly mapToRegistry using default registry
+77 silly mapToRegistry registry http://registry.npmjs.org/
+78 silly mapToRegistry data Result {
+78 silly mapToRegistry   raw: 'utf8',
+78 silly mapToRegistry   scope: null,
+78 silly mapToRegistry   escapedName: 'utf8',
+78 silly mapToRegistry   name: 'utf8',
+78 silly mapToRegistry   rawSpec: '',
+78 silly mapToRegistry   spec: 'latest',
+78 silly mapToRegistry   type: 'tag' }
+79 silly mapToRegistry uri http://registry.npmjs.org/utf8
+80 silly fetchNamedPackageData xhr2
+81 silly mapToRegistry name xhr2
+82 silly mapToRegistry using default registry
+83 silly mapToRegistry registry http://registry.npmjs.org/
+84 silly mapToRegistry data Result {
+84 silly mapToRegistry   raw: 'xhr2',
+84 silly mapToRegistry   scope: null,
+84 silly mapToRegistry   escapedName: 'xhr2',
+84 silly mapToRegistry   name: 'xhr2',
+84 silly mapToRegistry   rawSpec: '',
+84 silly mapToRegistry   spec: 'latest',
+84 silly mapToRegistry   type: 'tag' }
+85 silly mapToRegistry uri http://registry.npmjs.org/xhr2
+86 silly fetchNamedPackageData xmlhttprequest
+87 silly mapToRegistry name xmlhttprequest
+88 silly mapToRegistry using default registry
+89 silly mapToRegistry registry http://registry.npmjs.org/
+90 silly mapToRegistry data Result {
+90 silly mapToRegistry   raw: 'xmlhttprequest',
+90 silly mapToRegistry   scope: null,
+90 silly mapToRegistry   escapedName: 'xmlhttprequest',
+90 silly mapToRegistry   name: 'xmlhttprequest',
+90 silly mapToRegistry   rawSpec: '',
+90 silly mapToRegistry   spec: 'latest',
+90 silly mapToRegistry   type: 'tag' }
+91 silly mapToRegistry uri http://registry.npmjs.org/xmlhttprequest
+92 silly fetchOtherPackageData bignumber.js@git+https://github.com/frozeman/bignumber.js-nolookahead.git
+93 silly cache add args [ 'bignumber.js@git+https://github.com/frozeman/bignumber.js-nolookahead.git',
+93 silly cache add   null ]
+94 verbose cache add spec bignumber.js@git+https://github.com/frozeman/bignumber.js-nolookahead.git
+95 verbose request uri http://registry.npmjs.org/crypto-js
+96 verbose request no auth needed
+97 info attempt registry request try #1 at 11:35:51 PM
+98 http request GET http://registry.npmjs.org/crypto-js
+99 verbose request uri http://registry.npmjs.org/utf8
+100 verbose request no auth needed
+101 info attempt registry request try #1 at 11:35:51 PM
+102 http request GET http://registry.npmjs.org/utf8
+103 silly cache add parsed spec Result {
+103 silly cache add   raw: 'bignumber.js@git+https://github.com/frozeman/bignumber.js-nolookahead.git',
+103 silly cache add   scope: null,
+103 silly cache add   escapedName: 'bignumber.js',
+103 silly cache add   name: 'bignumber.js',
+103 silly cache add   rawSpec: 'git+https://github.com/frozeman/bignumber.js-nolookahead.git',
+103 silly cache add   spec: 'git+https://github.com/frozeman/bignumber.js-nolookahead.git',
+103 silly cache add   type: 'hosted',
+103 silly cache add   hosted:
+103 silly cache add    { type: 'github',
+103 silly cache add      ssh: 'git@github.com:frozeman/bignumber.js-nolookahead.git',
+103 silly cache add      sshUrl: 'git+ssh://git@github.com/frozeman/bignumber.js-nolookahead.git',
+103 silly cache add      httpsUrl: 'git+https://github.com/frozeman/bignumber.js-nolookahead.git',
+103 silly cache add      gitUrl: 'git://github.com/frozeman/bignumber.js-nolookahead.git',
+103 silly cache add      shortcut: 'github:frozeman/bignumber.js-nolookahead',
+103 silly cache add      directUrl: 'https://raw.githubusercontent.com/frozeman/bignumber.js-nolookahead/master/package.json' } }
+104 verbose addRemoteGit caching git+https://github.com/frozeman/bignumber.js-nolookahead.git
+105 verbose addRemoteGit git+https://github.com/frozeman/bignumber.js-nolookahead.git is a repository hosted by github
+106 silly tryClone cloning git+https://github.com/frozeman/bignumber.js-nolookahead.git via git+https://github.com/frozeman/bignumber.js-nolookahead.git
+107 verbose tryClone git-https-github-com-frozeman-bignumber-js-nolookahead-git-18eea52a not in flight; caching
+108 verbose correctMkdir /root/.npm/_git-remotes correctMkdir not in flight; initializing
+109 verbose request uri http://registry.npmjs.org/xmlhttprequest
+110 verbose request no auth needed
+111 info attempt registry request try #1 at 11:35:51 PM
+112 http request GET http://registry.npmjs.org/xmlhttprequest
+113 verbose request uri http://registry.npmjs.org/xhr2
+114 verbose request no auth needed
+115 info attempt registry request try #1 at 11:35:51 PM
+116 http request GET http://registry.npmjs.org/xhr2
+117 verbose makeDirectory /root/.npm/_git-remotes creation not in flight; initializing
+118 silly makeDirectory /root/.npm/_git-remotes uid: 1000 gid: 1000
+119 info git [ 'clone',
+119 info git   '--template=/root/.npm/_git-remotes/_templates',
+119 info git   '--mirror',
+119 info git   'https://github.com/frozeman/bignumber.js-nolookahead.git',
+119 info git   '/root/.npm/_git-remotes/git-https-github-com-frozeman-bignumber-js-nolookahead-git-18eea52a' ]
+120 http 200 http://registry.npmjs.org/xmlhttprequest
+121 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+121 verbose headers   server: 'UploadServer',
+121 verbose headers   'cache-control': 'max-age=300',
+121 verbose headers   'last-modified': 'Sat, 17 Mar 2018 21:09:06 GMT',
+121 verbose headers   etag: '"5aad83f2-3109"',
+121 verbose headers   'x-npm-region': 'Asia-South',
+121 verbose headers   'content-encoding': 'gzip',
+121 verbose headers   'content-length': '2688',
+121 verbose headers   'accept-ranges': 'bytes',
+121 verbose headers   date: 'Sun, 15 Apr 2018 18:05:51 GMT',
+121 verbose headers   via: '1.1 varnish',
+121 verbose headers   age: '5363',
+121 verbose headers   connection: 'keep-alive',
+121 verbose headers   'x-served-by': 'cache-bom18221-BOM',
+121 verbose headers   'x-cache': 'HIT',
+121 verbose headers   'x-cache-hits': '5',
+121 verbose headers   'x-timer': 'S1523815551.238581,VS0,VE0',
+121 verbose headers   vary: 'Accept-Encoding, Accept' }
+122 silly get cb [ 200,
+122 silly get   { 'content-type': 'application/json; charset=UTF-8',
+122 silly get     server: 'UploadServer',
+122 silly get     'cache-control': 'max-age=300',
+122 silly get     'last-modified': 'Sat, 17 Mar 2018 21:09:06 GMT',
+122 silly get     etag: '"5aad83f2-3109"',
+122 silly get     'x-npm-region': 'Asia-South',
+122 silly get     'content-encoding': 'gzip',
+122 silly get     'content-length': '2688',
+122 silly get     'accept-ranges': 'bytes',
+122 silly get     date: 'Sun, 15 Apr 2018 18:05:51 GMT',
+122 silly get     via: '1.1 varnish',
+122 silly get     age: '5363',
+122 silly get     connection: 'keep-alive',
+122 silly get     'x-served-by': 'cache-bom18221-BOM',
+122 silly get     'x-cache': 'HIT',
+122 silly get     'x-cache-hits': '5',
+122 silly get     'x-timer': 'S1523815551.238581,VS0,VE0',
+122 silly get     vary: 'Accept-Encoding, Accept' } ]
+123 verbose get saving xmlhttprequest to /root/.npm/registry.npmjs.org/xmlhttprequest/.cache.json
+124 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+125 http 200 http://registry.npmjs.org/xhr2
+126 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+126 verbose headers   server: 'UploadServer',
+126 verbose headers   'cache-control': 'max-age=300',
+126 verbose headers   'last-modified': 'Fri, 8 Dec 2017 0:31:41 GMT',
+126 verbose headers   etag: '"5a29dd6d-541c"',
+126 verbose headers   'x-npm-region': 'Asia-South',
+126 verbose headers   'content-encoding': 'gzip',
+126 verbose headers   'content-length': '3829',
+126 verbose headers   'accept-ranges': 'bytes',
+126 verbose headers   date: 'Sun, 15 Apr 2018 18:05:51 GMT',
+126 verbose headers   via: '1.1 varnish',
+126 verbose headers   age: '1247',
+126 verbose headers   connection: 'keep-alive',
+126 verbose headers   'x-served-by': 'cache-bom18225-BOM',
+126 verbose headers   'x-cache': 'HIT',
+126 verbose headers   'x-cache-hits': '1',
+126 verbose headers   'x-timer': 'S1523815551.240725,VS0,VE0',
+126 verbose headers   vary: 'Accept-Encoding, Accept' }
+127 silly get cb [ 200,
+127 silly get   { 'content-type': 'application/json; charset=UTF-8',
+127 silly get     server: 'UploadServer',
+127 silly get     'cache-control': 'max-age=300',
+127 silly get     'last-modified': 'Fri, 8 Dec 2017 0:31:41 GMT',
+127 silly get     etag: '"5a29dd6d-541c"',
+127 silly get     'x-npm-region': 'Asia-South',
+127 silly get     'content-encoding': 'gzip',
+127 silly get     'content-length': '3829',
+127 silly get     'accept-ranges': 'bytes',
+127 silly get     date: 'Sun, 15 Apr 2018 18:05:51 GMT',
+127 silly get     via: '1.1 varnish',
+127 silly get     age: '1247',
+127 silly get     connection: 'keep-alive',
+127 silly get     'x-served-by': 'cache-bom18225-BOM',
+127 silly get     'x-cache': 'HIT',
+127 silly get     'x-cache-hits': '1',
+127 silly get     'x-timer': 'S1523815551.240725,VS0,VE0',
+127 silly get     vary: 'Accept-Encoding, Accept' } ]
+128 verbose get saving xhr2 to /root/.npm/registry.npmjs.org/xhr2/.cache.json
+129 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+130 silly resolveWithNewModule xmlhttprequest@1.8.0 checking installable status
+131 silly cache add args [ 'xmlhttprequest@*', null ]
+132 verbose cache add spec xmlhttprequest@*
+133 silly cache add parsed spec Result {
+133 silly cache add   raw: 'xmlhttprequest@*',
+133 silly cache add   scope: null,
+133 silly cache add   escapedName: 'xmlhttprequest',
+133 silly cache add   name: 'xmlhttprequest',
+133 silly cache add   rawSpec: '*',
+133 silly cache add   spec: '*',
+133 silly cache add   type: 'range' }
+134 silly addNamed xmlhttprequest@*
+135 verbose addNamed "*" is a valid semver range for xmlhttprequest
+136 silly addNameRange { name: 'xmlhttprequest', range: '*', hasData: false }
+137 silly mapToRegistry name xmlhttprequest
+138 silly mapToRegistry using default registry
+139 silly mapToRegistry registry http://registry.npmjs.org/
+140 silly mapToRegistry data Result {
+140 silly mapToRegistry   raw: 'xmlhttprequest',
+140 silly mapToRegistry   scope: null,
+140 silly mapToRegistry   escapedName: 'xmlhttprequest',
+140 silly mapToRegistry   name: 'xmlhttprequest',
+140 silly mapToRegistry   rawSpec: '',
+140 silly mapToRegistry   spec: 'latest',
+140 silly mapToRegistry   type: 'tag' }
+141 silly mapToRegistry uri http://registry.npmjs.org/xmlhttprequest
+142 verbose addNameRange registry:http://registry.npmjs.org/xmlhttprequest not in flight; fetching
+143 silly resolveWithNewModule xhr2@0.1.4 checking installable status
+144 silly cache add args [ 'xhr2@*', null ]
+145 verbose cache add spec xhr2@*
+146 silly cache add parsed spec Result {
+146 silly cache add   raw: 'xhr2@*',
+146 silly cache add   scope: null,
+146 silly cache add   escapedName: 'xhr2',
+146 silly cache add   name: 'xhr2',
+146 silly cache add   rawSpec: '*',
+146 silly cache add   spec: '*',
+146 silly cache add   type: 'range' }
+147 silly addNamed xhr2@*
+148 verbose addNamed "*" is a valid semver range for xhr2
+149 silly addNameRange { name: 'xhr2', range: '*', hasData: false }
+150 silly mapToRegistry name xhr2
+151 silly mapToRegistry using default registry
+152 silly mapToRegistry registry http://registry.npmjs.org/
+153 silly mapToRegistry data Result {
+153 silly mapToRegistry   raw: 'xhr2',
+153 silly mapToRegistry   scope: null,
+153 silly mapToRegistry   escapedName: 'xhr2',
+153 silly mapToRegistry   name: 'xhr2',
+153 silly mapToRegistry   rawSpec: '',
+153 silly mapToRegistry   spec: 'latest',
+153 silly mapToRegistry   type: 'tag' }
+154 silly mapToRegistry uri http://registry.npmjs.org/xhr2
+155 verbose addNameRange registry:http://registry.npmjs.org/xhr2 not in flight; fetching
+156 verbose get http://registry.npmjs.org/xmlhttprequest not expired, no request
+157 silly addNameRange number 2 { name: 'xmlhttprequest', range: '*', hasData: true }
+158 silly addNameRange versions [ 'xmlhttprequest',
+158 silly addNameRange   [ '1.0.0',
+158 silly addNameRange     '1.2.0',
+158 silly addNameRange     '1.2.1',
+158 silly addNameRange     '1.2.2',
+158 silly addNameRange     '1.3.0',
+158 silly addNameRange     '1.4.0',
+158 silly addNameRange     '1.4.2',
+158 silly addNameRange     '1.5.0',
+158 silly addNameRange     '1.6.0',
+158 silly addNameRange     '1.7.0',
+158 silly addNameRange     '1.8.0' ] ]
+159 silly addNamed xmlhttprequest@1.8.0
+160 verbose addNamed "1.8.0" is a plain semver version for xmlhttprequest
+161 verbose get http://registry.npmjs.org/xhr2 not expired, no request
+162 silly addNameRange number 2 { name: 'xhr2', range: '*', hasData: true }
+163 silly addNameRange versions [ 'xhr2',
+163 silly addNameRange   [ '0.0.1',
+163 silly addNameRange     '0.0.2',
+163 silly addNameRange     '0.0.3',
+163 silly addNameRange     '0.0.4',
+163 silly addNameRange     '0.0.5',
+163 silly addNameRange     '0.0.6',
+163 silly addNameRange     '0.0.7',
+163 silly addNameRange     '0.1.0',
+163 silly addNameRange     '0.1.1',
+163 silly addNameRange     '0.1.2',
+163 silly addNameRange     '0.1.3',
+163 silly addNameRange     '0.1.4' ] ]
+164 silly addNamed xhr2@0.1.4
+165 verbose addNamed "0.1.4" is a plain semver version for xhr2
+166 silly mapToRegistry name xmlhttprequest
+167 silly mapToRegistry using default registry
+168 silly mapToRegistry registry http://registry.npmjs.org/
+169 silly mapToRegistry data Result {
+169 silly mapToRegistry   raw: 'xmlhttprequest',
+169 silly mapToRegistry   scope: null,
+169 silly mapToRegistry   escapedName: 'xmlhttprequest',
+169 silly mapToRegistry   name: 'xmlhttprequest',
+169 silly mapToRegistry   rawSpec: '',
+169 silly mapToRegistry   spec: 'latest',
+169 silly mapToRegistry   type: 'tag' }
+170 silly mapToRegistry uri http://registry.npmjs.org/xmlhttprequest
+171 verbose addRemoteTarball http://registry.npmjs.org/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz not in flight; adding
+172 verbose addRemoteTarball [ 'http://registry.npmjs.org/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz',
+172 verbose addRemoteTarball   '67fe075c5c24fef39f9d65f5f7b7fe75171968fc' ]
+173 silly mapToRegistry name xhr2
+174 silly mapToRegistry using default registry
+175 silly mapToRegistry registry http://registry.npmjs.org/
+176 silly mapToRegistry data Result {
+176 silly mapToRegistry   raw: 'xhr2',
+176 silly mapToRegistry   scope: null,
+176 silly mapToRegistry   escapedName: 'xhr2',
+176 silly mapToRegistry   name: 'xhr2',
+176 silly mapToRegistry   rawSpec: '',
+176 silly mapToRegistry   spec: 'latest',
+176 silly mapToRegistry   type: 'tag' }
+177 silly mapToRegistry uri http://registry.npmjs.org/xhr2
+178 verbose addRemoteTarball http://registry.npmjs.org/xhr2/-/xhr2-0.1.4.tgz not in flight; adding
+179 verbose addRemoteTarball [ 'http://registry.npmjs.org/xhr2/-/xhr2-0.1.4.tgz',
+179 verbose addRemoteTarball   '7f87658847716db5026323812f818cadab387a5f' ]
+180 info retry fetch attempt 1 at 11:35:51 PM
+181 info attempt registry request try #1 at 11:35:51 PM
+182 http fetch GET http://registry.npmjs.org/xhr2/-/xhr2-0.1.4.tgz
+183 info retry fetch attempt 1 at 11:35:51 PM
+184 info attempt registry request try #1 at 11:35:51 PM
+185 http fetch GET http://registry.npmjs.org/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz
+186 http fetch 200 http://registry.npmjs.org/xhr2/-/xhr2-0.1.4.tgz
+187 http fetch 200 http://registry.npmjs.org/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz
+188 silly fetchAndShaCheck shasum 7f87658847716db5026323812f818cadab387a5f
+189 verbose addTmpTarball /tmp/npm-21177-54560bb7/registry.npmjs.org/xhr2/-/xhr2-0.1.4.tgz not in flight; adding
+190 verbose addTmpTarball already have metadata; skipping unpack for xhr2@0.1.4
+191 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+192 silly cache afterAdd xhr2@0.1.4
+193 verbose afterAdd /root/.npm/xhr2/0.1.4/package/package.json not in flight; writing
+194 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+195 verbose afterAdd /root/.npm/xhr2/0.1.4/package/package.json written
+196 silly fetchAndShaCheck shasum 67fe075c5c24fef39f9d65f5f7b7fe75171968fc
+197 verbose addTmpTarball /tmp/npm-21177-54560bb7/registry.npmjs.org/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz not in flight; adding
+198 verbose addTmpTarball already have metadata; skipping unpack for xmlhttprequest@1.8.0
+199 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+200 http 200 http://registry.npmjs.org/crypto-js
+201 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+201 verbose headers   server: 'UploadServer',
+201 verbose headers   'cache-control': 'max-age=300',
+201 verbose headers   'last-modified': 'Sun, 18 Mar 2018 7:07:25 GMT',
+201 verbose headers   etag: '"5aae102d-580f"',
+201 verbose headers   'x-npm-region': 'Asia-South',
+201 verbose headers   'content-encoding': 'gzip',
+201 verbose headers   'content-length': '4336',
+201 verbose headers   'accept-ranges': 'bytes',
+201 verbose headers   date: 'Sun, 15 Apr 2018 18:05:51 GMT',
+201 verbose headers   via: '1.1 varnish',
+201 verbose headers   age: '0',
+201 verbose headers   connection: 'keep-alive',
+201 verbose headers   'x-served-by': 'cache-bom18223-BOM',
+201 verbose headers   'x-cache': 'HIT',
+201 verbose headers   'x-cache-hits': '1',
+201 verbose headers   'x-timer': 'S1523815551.159587,VS0,VE283',
+201 verbose headers   vary: 'Accept-Encoding, Accept' }
+202 silly get cb [ 200,
+202 silly get   { 'content-type': 'application/json; charset=UTF-8',
+202 silly get     server: 'UploadServer',
+202 silly get     'cache-control': 'max-age=300',
+202 silly get     'last-modified': 'Sun, 18 Mar 2018 7:07:25 GMT',
+202 silly get     etag: '"5aae102d-580f"',
+202 silly get     'x-npm-region': 'Asia-South',
+202 silly get     'content-encoding': 'gzip',
+202 silly get     'content-length': '4336',
+202 silly get     'accept-ranges': 'bytes',
+202 silly get     date: 'Sun, 15 Apr 2018 18:05:51 GMT',
+202 silly get     via: '1.1 varnish',
+202 silly get     age: '0',
+202 silly get     connection: 'keep-alive',
+202 silly get     'x-served-by': 'cache-bom18223-BOM',
+202 silly get     'x-cache': 'HIT',
+202 silly get     'x-cache-hits': '1',
+202 silly get     'x-timer': 'S1523815551.159587,VS0,VE283',
+202 silly get     vary: 'Accept-Encoding, Accept' } ]
+203 verbose get saving crypto-js to /root/.npm/registry.npmjs.org/crypto-js/.cache.json
+204 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+205 silly cache afterAdd xmlhttprequest@1.8.0
+206 verbose afterAdd /root/.npm/xmlhttprequest/1.8.0/package/package.json not in flight; writing
+207 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+208 silly resolveWithNewModule crypto-js@3.1.8 checking installable status
+209 silly cache add args [ 'crypto-js@^3.1.4', null ]
+210 verbose cache add spec crypto-js@^3.1.4
+211 silly cache add parsed spec Result {
+211 silly cache add   raw: 'crypto-js@^3.1.4',
+211 silly cache add   scope: null,
+211 silly cache add   escapedName: 'crypto-js',
+211 silly cache add   name: 'crypto-js',
+211 silly cache add   rawSpec: '^3.1.4',
+211 silly cache add   spec: '>=3.1.4 <4.0.0',
+211 silly cache add   type: 'range' }
+212 silly addNamed crypto-js@>=3.1.4 <4.0.0
+213 verbose addNamed ">=3.1.4 <4.0.0" is a valid semver range for crypto-js
+214 silly addNameRange { name: 'crypto-js', range: '>=3.1.4 <4.0.0', hasData: false }
+215 silly mapToRegistry name crypto-js
+216 silly mapToRegistry using default registry
+217 silly mapToRegistry registry http://registry.npmjs.org/
+218 silly mapToRegistry data Result {
+218 silly mapToRegistry   raw: 'crypto-js',
+218 silly mapToRegistry   scope: null,
+218 silly mapToRegistry   escapedName: 'crypto-js',
+218 silly mapToRegistry   name: 'crypto-js',
+218 silly mapToRegistry   rawSpec: '',
+218 silly mapToRegistry   spec: 'latest',
+218 silly mapToRegistry   type: 'tag' }
+219 silly mapToRegistry uri http://registry.npmjs.org/crypto-js
+220 verbose addNameRange registry:http://registry.npmjs.org/crypto-js not in flight; fetching
+221 verbose get http://registry.npmjs.org/crypto-js not expired, no request
+222 silly addNameRange number 2 { name: 'crypto-js', range: '>=3.1.4 <4.0.0', hasData: true }
+223 silly addNameRange versions [ 'crypto-js',
+223 silly addNameRange   [ '3.1.2',
+223 silly addNameRange     '3.1.2-1',
+223 silly addNameRange     '3.1.2-2',
+223 silly addNameRange     '3.1.2-3',
+223 silly addNameRange     '3.1.2-4',
+223 silly addNameRange     '3.1.2-5',
+223 silly addNameRange     '3.1.2-6',
+223 silly addNameRange     '3.1.4',
+223 silly addNameRange     '3.1.5',
+223 silly addNameRange     '3.1.6',
+223 silly addNameRange     '3.1.7',
+223 silly addNameRange     '3.1.8',
+223 silly addNameRange     '3.1.9-1' ] ]
+224 silly addNamed crypto-js@3.1.8
+225 verbose addNamed "3.1.8" is a plain semver version for crypto-js
+226 verbose afterAdd /root/.npm/xmlhttprequest/1.8.0/package/package.json written
+227 silly mapToRegistry name crypto-js
+228 silly mapToRegistry using default registry
+229 silly mapToRegistry registry http://registry.npmjs.org/
+230 silly mapToRegistry data Result {
+230 silly mapToRegistry   raw: 'crypto-js',
+230 silly mapToRegistry   scope: null,
+230 silly mapToRegistry   escapedName: 'crypto-js',
+230 silly mapToRegistry   name: 'crypto-js',
+230 silly mapToRegistry   rawSpec: '',
+230 silly mapToRegistry   spec: 'latest',
+230 silly mapToRegistry   type: 'tag' }
+231 silly mapToRegistry uri http://registry.npmjs.org/crypto-js
+232 verbose addRemoteTarball http://registry.npmjs.org/crypto-js/-/crypto-js-3.1.8.tgz not in flight; adding
+233 verbose addRemoteTarball [ 'http://registry.npmjs.org/crypto-js/-/crypto-js-3.1.8.tgz',
+233 verbose addRemoteTarball   '715f070bf6014f2ae992a98b3929258b713f08d5' ]
+234 info retry fetch attempt 1 at 11:35:51 PM
+235 info attempt registry request try #1 at 11:35:51 PM
+236 http fetch GET http://registry.npmjs.org/crypto-js/-/crypto-js-3.1.8.tgz
+237 http fetch 200 http://registry.npmjs.org/crypto-js/-/crypto-js-3.1.8.tgz
+238 http 200 http://registry.npmjs.org/utf8
+239 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+239 verbose headers   server: 'UploadServer',
+239 verbose headers   'cache-control': 'max-age=300',
+239 verbose headers   'last-modified': 'Tue, 5 Dec 2017 14:16:06 GMT',
+239 verbose headers   etag: '"5a26aa26-308d"',
+239 verbose headers   'x-npm-region': 'Asia-South',
+239 verbose headers   'content-encoding': 'gzip',
+239 verbose headers   'content-length': '3806',
+239 verbose headers   'accept-ranges': 'bytes',
+239 verbose headers   date: 'Sun, 15 Apr 2018 18:05:51 GMT',
+239 verbose headers   via: '1.1 varnish',
+239 verbose headers   age: '0',
+239 verbose headers   connection: 'keep-alive',
+239 verbose headers   'x-served-by': 'cache-bom18225-BOM',
+239 verbose headers   'x-cache': 'MISS',
+239 verbose headers   'x-cache-hits': '0',
+239 verbose headers   'x-timer': 'S1523815551.248583,VS0,VE270',
+239 verbose headers   vary: 'Accept-Encoding, Accept' }
+240 silly get cb [ 200,
+240 silly get   { 'content-type': 'application/json; charset=UTF-8',
+240 silly get     server: 'UploadServer',
+240 silly get     'cache-control': 'max-age=300',
+240 silly get     'last-modified': 'Tue, 5 Dec 2017 14:16:06 GMT',
+240 silly get     etag: '"5a26aa26-308d"',
+240 silly get     'x-npm-region': 'Asia-South',
+240 silly get     'content-encoding': 'gzip',
+240 silly get     'content-length': '3806',
+240 silly get     'accept-ranges': 'bytes',
+240 silly get     date: 'Sun, 15 Apr 2018 18:05:51 GMT',
+240 silly get     via: '1.1 varnish',
+240 silly get     age: '0',
+240 silly get     connection: 'keep-alive',
+240 silly get     'x-served-by': 'cache-bom18225-BOM',
+240 silly get     'x-cache': 'MISS',
+240 silly get     'x-cache-hits': '0',
+240 silly get     'x-timer': 'S1523815551.248583,VS0,VE270',
+240 silly get     vary: 'Accept-Encoding, Accept' } ]
+241 verbose get saving utf8 to /root/.npm/registry.npmjs.org/utf8/.cache.json
+242 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+243 silly resolveWithNewModule utf8@2.1.2 checking installable status
+244 silly cache add args [ 'utf8@^2.1.1', null ]
+245 verbose cache add spec utf8@^2.1.1
+246 silly cache add parsed spec Result {
+246 silly cache add   raw: 'utf8@^2.1.1',
+246 silly cache add   scope: null,
+246 silly cache add   escapedName: 'utf8',
+246 silly cache add   name: 'utf8',
+246 silly cache add   rawSpec: '^2.1.1',
+246 silly cache add   spec: '>=2.1.1 <3.0.0',
+246 silly cache add   type: 'range' }
+247 silly addNamed utf8@>=2.1.1 <3.0.0
+248 verbose addNamed ">=2.1.1 <3.0.0" is a valid semver range for utf8
+249 silly addNameRange { name: 'utf8', range: '>=2.1.1 <3.0.0', hasData: false }
+250 silly mapToRegistry name utf8
+251 silly mapToRegistry using default registry
+252 silly mapToRegistry registry http://registry.npmjs.org/
+253 silly mapToRegistry data Result {
+253 silly mapToRegistry   raw: 'utf8',
+253 silly mapToRegistry   scope: null,
+253 silly mapToRegistry   escapedName: 'utf8',
+253 silly mapToRegistry   name: 'utf8',
+253 silly mapToRegistry   rawSpec: '',
+253 silly mapToRegistry   spec: 'latest',
+253 silly mapToRegistry   type: 'tag' }
+254 silly mapToRegistry uri http://registry.npmjs.org/utf8
+255 verbose addNameRange registry:http://registry.npmjs.org/utf8 not in flight; fetching
+256 verbose get http://registry.npmjs.org/utf8 not expired, no request
+257 silly addNameRange number 2 { name: 'utf8', range: '>=2.1.1 <3.0.0', hasData: true }
+258 silly addNameRange versions [ 'utf8',
+258 silly addNameRange   [ '1.0.0', '2.0.0', '2.1.0', '2.1.1', '2.1.2', '3.0.0' ] ]
+259 silly addNamed utf8@2.1.2
+260 verbose addNamed "2.1.2" is a plain semver version for utf8
+261 silly mapToRegistry name utf8
+262 silly mapToRegistry using default registry
+263 silly mapToRegistry registry http://registry.npmjs.org/
+264 silly mapToRegistry data Result {
+264 silly mapToRegistry   raw: 'utf8',
+264 silly mapToRegistry   scope: null,
+264 silly mapToRegistry   escapedName: 'utf8',
+264 silly mapToRegistry   name: 'utf8',
+264 silly mapToRegistry   rawSpec: '',
+264 silly mapToRegistry   spec: 'latest',
+264 silly mapToRegistry   type: 'tag' }
+265 silly mapToRegistry uri http://registry.npmjs.org/utf8
+266 verbose addRemoteTarball http://registry.npmjs.org/utf8/-/utf8-2.1.2.tgz not in flight; adding
+267 verbose addRemoteTarball [ 'http://registry.npmjs.org/utf8/-/utf8-2.1.2.tgz',
+267 verbose addRemoteTarball   '1fa0d9270e9be850d9b05027f63519bf46457d96' ]
+268 info retry fetch attempt 1 at 11:35:51 PM
+269 info attempt registry request try #1 at 11:35:51 PM
+270 http fetch GET http://registry.npmjs.org/utf8/-/utf8-2.1.2.tgz
+271 silly fetchAndShaCheck shasum 715f070bf6014f2ae992a98b3929258b713f08d5
+272 verbose addTmpTarball /tmp/npm-21177-54560bb7/registry.npmjs.org/crypto-js/-/crypto-js-3.1.8.tgz not in flight; adding
+273 verbose addTmpTarball already have metadata; skipping unpack for crypto-js@3.1.8
+274 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+275 silly cache afterAdd crypto-js@3.1.8
+276 verbose afterAdd /root/.npm/crypto-js/3.1.8/package/package.json not in flight; writing
+277 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+278 verbose afterAdd /root/.npm/crypto-js/3.1.8/package/package.json written
+279 http fetch 200 http://registry.npmjs.org/utf8/-/utf8-2.1.2.tgz
+280 silly fetchAndShaCheck shasum 1fa0d9270e9be850d9b05027f63519bf46457d96
+281 verbose addTmpTarball /tmp/npm-21177-54560bb7/registry.npmjs.org/utf8/-/utf8-2.1.2.tgz not in flight; adding
+282 verbose addTmpTarball already have metadata; skipping unpack for utf8@2.1.2
+283 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+284 silly cache afterAdd utf8@2.1.2
+285 verbose afterAdd /root/.npm/utf8/2.1.2/package/package.json not in flight; writing
+286 verbose correctMkdir /root/.npm correctMkdir not in flight; initializing
+287 verbose afterAdd /root/.npm/utf8/2.1.2/package/package.json written
+288 error git clone --template=/root/.npm/_git-remotes/_templates --mirror https://github.com/frozeman/bignumber.js-nolookahead.git /root/.npm/_git-remotes/git-https-github-com-frozeman-bignumber-js-nolookahead-git-18eea52a: Cloning into bare repository '/root/.npm/_git-remotes/git-https-github-com-frozeman-bignumber-js-nolookahead-git-18eea52a'...
+288 error git clone --template=/root/.npm/_git-remotes/_templates --mirror https://github.com/frozeman/bignumber.js-nolookahead.git /root/.npm/_git-remotes/git-https-github-com-frozeman-bignumber-js-nolookahead-git-18eea52a: fatal: unable to access 'https://github.com/frozeman/bignumber.js-nolookahead.git/': Failed to connect to 172.16.16.2 port 3128: Connection refused
+289 silly fetchPackageMetaData Error: Command failed: git clone --template=/root/.npm/_git-remotes/_templates --mirror https://github.com/frozeman/bignumber.js-nolookahead.git /root/.npm/_git-remotes/git-https-github-com-frozeman-bignumber-js-nolookahead-git-18eea52a
+289 silly fetchPackageMetaData Cloning into bare repository '/root/.npm/_git-remotes/git-https-github-com-frozeman-bignumber-js-nolookahead-git-18eea52a'...
+289 silly fetchPackageMetaData fatal: unable to access 'https://github.com/frozeman/bignumber.js-nolookahead.git/': Failed to connect to 172.16.16.2 port 3128: Connection refused
+289 silly fetchPackageMetaData
+289 silly fetchPackageMetaData     at ChildProcess.exithandler (child_process.js:198:12)
+289 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
+289 silly fetchPackageMetaData     at ChildProcess.emit (events.js:191:7)
+289 silly fetchPackageMetaData     at maybeClose (internal/child_process.js:891:16)
+289 silly fetchPackageMetaData     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+289 silly fetchPackageMetaData  error for bignumber.js@git+https://github.com/frozeman/bignumber.js-nolookahead.git { Error: Command failed: git clone --template=/root/.npm/_git-remotes/_templates --mirror https://github.com/frozeman/bignumber.js-nolookahead.git /root/.npm/_git-remotes/git-https-github-com-frozeman-bignumber-js-nolookahead-git-18eea52a
+289 silly fetchPackageMetaData Cloning into bare repository '/root/.npm/_git-remotes/git-https-github-com-frozeman-bignumber-js-nolookahead-git-18eea52a'...
+289 silly fetchPackageMetaData fatal: unable to access 'https://github.com/frozeman/bignumber.js-nolookahead.git/': Failed to connect to 172.16.16.2 port 3128: Connection refused
+289 silly fetchPackageMetaData
+289 silly fetchPackageMetaData     at ChildProcess.exithandler (child_process.js:198:12)
+289 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
+289 silly fetchPackageMetaData     at ChildProcess.emit (events.js:191:7)
+289 silly fetchPackageMetaData     at maybeClose (internal/child_process.js:891:16)
+289 silly fetchPackageMetaData     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+289 silly fetchPackageMetaData   killed: false,
+289 silly fetchPackageMetaData   code: 128,
+289 silly fetchPackageMetaData   signal: null,
+289 silly fetchPackageMetaData   cmd: 'git clone --template=/root/.npm/_git-remotes/_templates --mirror https://github.com/frozeman/bignumber.js-nolookahead.git /root/.npm/_git-remotes/git-https-github-com-frozeman-bignumber-js-nolookahead-git-18eea52a' }
+290 silly rollbackFailedOptional Starting
+291 silly rollbackFailedOptional Finishing
+292 silly runTopLevelLifecycles Finishing
+293 silly install printInstalled
+294 verbose stack Error: Command failed: git clone --template=/root/.npm/_git-remotes/_templates --mirror https://github.com/frozeman/bignumber.js-nolookahead.git /root/.npm/_git-remotes/git-https-github-com-frozeman-bignumber-js-nolookahead-git-18eea52a
+294 verbose stack Cloning into bare repository '/root/.npm/_git-remotes/git-https-github-com-frozeman-bignumber-js-nolookahead-git-18eea52a'...
+294 verbose stack fatal: unable to access 'https://github.com/frozeman/bignumber.js-nolookahead.git/': Failed to connect to 172.16.16.2 port 3128: Connection refused
+294 verbose stack
+294 verbose stack     at ChildProcess.exithandler (child_process.js:198:12)
+294 verbose stack     at emitTwo (events.js:106:13)
+294 verbose stack     at ChildProcess.emit (events.js:191:7)
+294 verbose stack     at maybeClose (internal/child_process.js:891:16)
+294 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+295 verbose cwd /home/ronaldo/A_Major_Project_Block_Voting/major-project18/blockchain
+296 error Linux 4.11.11-300.fc26.x86_64
+297 error argv "/usr/bin/node" "/bin/npm" "install" "-g" "web3@0.20.1"
+298 error node v6.11.2
+299 error npm  v3.10.10
+300 error code 128
+301 error Command failed: git clone --template=/root/.npm/_git-remotes/_templates --mirror https://github.com/frozeman/bignumber.js-nolookahead.git /root/.npm/_git-remotes/git-https-github-com-frozeman-bignumber-js-nolookahead-git-18eea52a
+301 error Cloning into bare repository '/root/.npm/_git-remotes/git-https-github-com-frozeman-bignumber-js-nolookahead-git-18eea52a'...
+301 error fatal: unable to access 'https://github.com/frozeman/bignumber.js-nolookahead.git/': Failed to connect to 172.16.16.2 port 3128: Connection refused
+302 error If you need help, you may report this error at:
+302 error     <https://github.com/npm/npm/issues>
+303 verbose exit [ 1, true ]

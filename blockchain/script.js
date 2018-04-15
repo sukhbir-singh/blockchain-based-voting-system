@@ -9,8 +9,10 @@ abiDefinition = JSON.parse(compiledCode.contracts[':VotingManager'].interface)
 VotingContract = web3.eth.contract(abiDefinition)
 byteCode = compiledCode.contracts[':VotingManager'].bytecode
 deployedContract = VotingContract.new({data: byteCode, from: web3.eth.accounts[0], gas: 4700000})
+
 deployedContract.address
 contractInstance = VotingContract.at(deployedContract.address)
-contractInstance.addUser.call('Sukhbir',{from: web3.eth.accounts[0]})
-console.log(contractInstance.totalUsers.call())
+
+contractInstance.addUser('Sukhbir',{from: web3.eth.accounts[0]})
+contractInstance.totalUsers.call()
 
