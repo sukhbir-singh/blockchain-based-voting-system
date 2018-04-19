@@ -13,15 +13,31 @@
   	<div id="real_time_voting">  		
   	</div>
   	<div id="user_information">
-  		<p style="margin-top: 50px;"><u>Your Information</u></p><br>
+  		<p style="margin-top: 15px;"><u>Profile Information</u></p><br>
   		<p>Full Name: <%= @user.full_name %></p>
   		<p>Adhaar: <%= @user.adhaar %></p>
   		<form action="/logout" method="post" onsubmit="return formValidation();">
 	  	 	<button id="logout_btn" onclick="submit();">Logout</button>
 	  	</form>
   	</div>
-  	<div id="voting_history">
-  		<p>
+  	<div id="voting_history_div">
+      <% if 2+2+1 == 4%>
+  		<p style="margin-top: 70px;text-align:center;">You have not casted any vote yet.</p><br>
+        <button id="vote_now_btn" onclick="#">Vote Now!!</button></p>
+      <% else %>
+       <p style="margin-top: 10px;text-align:center;">Your Voting History</p><br>
+        <ul id="vote_casting_list">
+          <li><span class="leader_name">SpiderMan</span><span class="time_voted">10 April,18 12:02</span></li>
+          <li><span class="leader_name">Hulk</span><span class="time_voted">10 April,18 10:02</span></li>
+          <li><span class="leader_name">Captain America</span><span class="time_voted">9 April,18 20:02</span></li>
+          <li><span class="leader_name">Iron Man1</span><span class="time_voted">8 April,18 12:02</span></li>
+          <li><span class="leader_name">Iron Man2</span><span class="time_voted">8 April,18 07:02</span></li>
+          <li><span class="leader_name">Iron Man3</span><span class="time_voted">28 March,18 08:02</span></li>
+          <li><span class="leader_name">Iron Man4</span><span class="time_voted">20 March,18 11:02</span></li>
+          <li><span class="leader_name">Iron Man5</span><span class="time_voted">2 March,18 07:02</span></li>
+        </ul>
+        <button id="update_vote_btn" onclick="#">Update Your Vote</button>
+      <% end %>
   	</div>
 
   </div>

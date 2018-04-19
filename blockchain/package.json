@@ -1,9 +1,9 @@
 {
-  "name": "Your_First_Decentralized_Application",
+  "name": "major-project18",
   "version": "1.0.0",
-  "description": "Your first decentralized application",
+  "description": "Voting by blockchain",
   "author": "",
-  "repository": "git@github.com:llSourcell/Your_First_Decentralized_Application.git",
+  "repository": "https://github.com/sukhbir-singh/major-project18.git",
   "devDependencies": {
     "ethereumjs-testrpc": "^4.1.3",
     "solc": "^0.4.17",

@@ -204,16 +204,14 @@ position: relative;
   height: 100px;
   float:left;
   width: 50%;
-  height: 50%;  
+  height: 170px;  
 }
 
-#voting_history{
+#voting_history_div{
   background: yellow;
-  width: 200px;
-  height: 100px;
   float:left;  
   width: 50%;
-  height: 50%;
+  height: calc(100% - 170px);
 }
 
 #logout_btn{
@@ -227,4 +225,48 @@ position: relative;
 
 #user_information p{
   text-align: center;
+}
+
+ul#vote_casting_list{
+  height: 155px;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+ul#vote_casting_list li{
+  list-style-type: none;
+  padding: 5px;
+  background: white;  
+}
+
+.leader_name{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: inline-block;
+  max-width: 20px;
+}
+
+.time_voted{
+  float:right;
+  margin:5px;
+}
+
+#update_vote_btn{
+  position: relative;
+  width: 180px;
+  padding: 7px;
+  top: 50%;
+  left: 50%;
+  margin: 20px 0 0 -90px;
+}
+
+#vote_now_btn{
+  position: relative;
+  width: 100px;
+  padding: 7px;
+  top: 50%;
+  left: 50%;
+  margin: 20px 0 0 -50px;
 }
