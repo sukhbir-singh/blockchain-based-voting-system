@@ -2,8 +2,7 @@ class DashboardController < ApplicationController
    skip_before_action :verify_authenticity_token
 
 	def logout
-       session[:user_name]=nil 
-       session[:adhaar]=nil 
+       session[:user_id]=nil 
        render template: 'home'
 	end
 end

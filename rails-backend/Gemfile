@@ -24,6 +24,8 @@ gem 'mongoid', '~> 6.1.0'
 gem 'mongoid-autoinc'
 gem 'bson_ext'
 
+gem 'bcrypt'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
