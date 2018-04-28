@@ -7,6 +7,8 @@
 # Ignore bundler config.
 rails-backend/.bundle
 /.bundle
+*.log
+*.keep
 
 # Ignore the default SQLite database.
 rails-backend/db/*.sqlite3
