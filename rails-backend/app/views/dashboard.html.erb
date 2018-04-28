@@ -10,7 +10,14 @@
   <div class="cont_principal">
   <div class="cont_centrar_dashboard">
   	
-  	<div id="real_time_voting">  		
+  	<div id="real_time_voting">
+      
+      <form action="/vote_now" method="get" id="form1"> 
+        Enter Name: <input type="text" name="name"><br> 
+        Encryption Key: <input type="text" name="key"> 
+      </form> 
+      <button type="submit" form="form1" value="Submit">Submit</button>
+
   	</div>
   	<div id="user_information">
   		<p style="margin-top: 15px;"><u>Profile Information</u></p><br>
