@@ -26,7 +26,7 @@ class User
   field :is_active, type: Boolean, default: false
 
   def encrypt_fields    
-    self.password = BCrypt::Password.create(self.password) unless self.password.blank?
+    self.password = AES.encrypt(self.password, AES_KEY) unless self.password.blank?
   end
 
 end

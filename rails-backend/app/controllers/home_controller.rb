@@ -19,10 +19,10 @@ class HomeController < ApplicationController
    def signup
       unless params[:full_name].blank? || params[:email].blank? || params[:adhaar].blank? || params[:area].blank? || params[:dob].blank? || params[:contact].blank? || params[:password].blank?
    
-         u= User.new(full_name: params[:full_name], email: params[:email], adhaar: params[:adhaar], area: params[:area], dob: params[:dob], contact: params[:contact], password: BCrypt::Password.create(params[:password]), image: params[:image] )
+         u= User.new(full_name: params[:full_name], email: params[:email], adhaar: params[:adhaar], area: params[:area], dob: params[:dob], contact: params[:contact], password: params[:password], image: params[:image] )
          
          if u.save
-            u = User.where({email: params[:email], adhaar: params[:adhaar], email: params[:email]}).first
+            u = User.where({email: params[:email], adhaar: params[:adhaar]}).first
             session[:user_id] = u.id
             
             @user = u
@@ -39,7 +39,7 @@ class HomeController < ApplicationController
       unless params[:email].blank? || params[:password].blank? 
          u = User.where(email: params[:email]).first
          unless u.blank?
-            if u.password == BCrypt::Engine.hash_secret(params[:password], u.password.to_s)
+            if params[:password] == AES.decrypt(u.password, AES_KEY)
                session[:user_id] = u.id
                @user = u
                render template: 'dashboard'
