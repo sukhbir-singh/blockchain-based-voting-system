@@ -1,0 +1,12 @@
+
+#save hashed encryption key to database with profile
+
+#make leaders table 
+make page for voting a leader
+
+backend end point for voting a leader or update your vote
+backend end point for changing status of is_valid
+
+add user content to blockchain after profile update
+
+

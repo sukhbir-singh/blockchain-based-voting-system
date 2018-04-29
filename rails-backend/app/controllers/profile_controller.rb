@@ -15,30 +15,30 @@ class ProfileController < ApplicationController
    end
 
    def update_profile   
-   		@user=User.find(session[:user_id])
-   		@user.update_attributes(profile_attributes)
+		@user=User.find(session[:user_id])		
 
-      #    u= User.new(full_name: params[:full_name], email: params[:email], adhaar: params[:adhaar], area: params[:area], dob: params[:dob], contact: params[:contact], password: BCrypt::Password.create(params[:password]), image: params[:image] )
-         
-      #    if u.save
-      #       # u = User.where({email: params[:email], adhaar: params[:adhaar], email: params[:email]}).first
-      #       session[:user_id] = u.id
-            
-      #       @user = u
-      #       render template: 'dashboard'
-      #    else
-      #       render template: 'home'
-      #    end         
-      # else
-      #    render template: 'home'
-      # end
+      if @user.blank?
+         render template: 'home'   
+         return
+      end
 
+      if @user.encryption_key.blank? && !params[:key].blank?
+         @user.update_attributes(profile_attributes_with_key)         
+      else
+         @user.update_attributes(profile_attributes)
+      end
+
+      redirect_to dashboard_path
    end
 
    private 
 
    def profile_attributes
    	  params.permit(:full_name,:email, :adhaar, :area, :dob, :contact)
+   end
+
+   def profile_attributes_with_key
+        params.permit(:full_name,:email, :adhaar, :area, :dob, :contact).merge(encryption_key: params[:key])
    end
 
 end

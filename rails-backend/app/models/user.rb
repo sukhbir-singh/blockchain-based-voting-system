@@ -6,7 +6,7 @@ class User
   include Mongoid::Timestamps::Created
   include ActiveModel::Validations
 
-  before_save :encrypt_fields
+  before_save :encrypt_fields, if: :password_changed?
 
   field :inc_id,            type: Integer
   increments :inc_id, seed: 0
@@ -23,6 +23,8 @@ class User
   field :dob, type: Date
   field :contact, type: String
   field :password, type: String
+  field :encryption_key, type: String, default: nil
+
   field :is_active, type: Boolean, default: false
 
   def encrypt_fields    

@@ -101,7 +101,7 @@ function submit(e){
 }
 
 window.onload =function(){
-  document.querySelector('.cont_centrar').className = "cont_centrar cent_active";
+  // document.querySelector('.cont_centrar').className = "cont_centrar cent_active";
 }
 
 function formValidation(){
@@ -125,5 +125,36 @@ function formValidation(){
       return true;
   }
   
+  return false;
+}
+
+function validateProfileUpdate(){
+  var full_name = document.forms[0].full_name.value;
+  var adhaar= document.forms[0].adhaar.value;
+  var contact= document.forms[0].contact.value;
+  var email= document.forms[0].email.value;
+  var area= document.forms[0].area.value;
+  var dob= document.forms[0].dob.value;
+  var encryption_key= document.forms[0].key.value;
+  var confirm_encryption_key= document.forms[0].key_confirm.value;
+
+  if(document.forms[0].key.disabled){
+    if(full_name.trim().length>0 && adhaar.trim().length>0 && area.trim().length>0 && contact.trim().length>0 && email.trim().length>0 &&dob.trim().length>0){
+      console.log("field disabled and response true");
+      return true;
+    }      
+  }else{
+    if(full_name.trim().length>0 && adhaar.trim().length>0 && area.trim().length>0 && contact.trim().length>0 && email.trim().length>0 &&dob.trim().length>0 && encryption_key.trim().length>=6 && encryption_key===confirm_encryption_key){
+        
+        console.log("field enabled and response true");        
+        var hash = CryptoJS.SHA1(encryption_key);
+        document.forms[0].key.value = hash;
+        document.forms[0].key_confirm.value = hash;
+
+        return true;
+    }      
+  }
+
+  console.log("response false");
   return false;
 }

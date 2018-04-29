@@ -5,12 +5,14 @@
   <title>Blockchain Voting App</title>
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600'>
       <link rel="stylesheet" href="css/style.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha1.js"></script>
 </head>
 <body>
   <div class="cont_principal">
-  <div class="cont_centrar_dashboard" style="background: #fbd9d7">
-  	<form action="/profile" method="post">
+  <div class="cont_centrar_dashboard" style="background: #fbd9d7">  	
     <div class="profile_update_div">
+      <form action="/profile" method="post" onsubmit="return validateProfileUpdate();">
       <span class="profile_label">Name</span>
       <input type="text" class="input_form_profile" placeholder="Update Name" name="full_name" value="<%= @user.full_name %>"/><br>
       <span class="profile_label">Email</span>
@@ -24,16 +26,23 @@
       <span class="profile_label">Contact</span>
       <input type="text" class="input_form_profile" placeholder="Update Contact" name="contact"  value="<%= @user.contact %>"/>
       <br>
-      <span class="profile_label">Encryption Key</span>
-      <input type="text" class="input_form_profile" placeholder="Enter Encryption Key" name="key"/>
+
+      <%if @user.encryption_key.blank? %>
+        <span class="profile_label">Encryption Key</span>
+        <input type="text" class="input_form_profile" placeholder="Enter Encryption Key" name="key"/>
+        <br>
+        <span class="profile_label">Confirm Encryption Key</span>
+        <input type="text" class="input_form_profile" placeholder="Re-Enter Encryption Key" name="key_confirm"/>
+      <%else%>
+        <span class="profile_label">Hashed Encryption Key</span>
+        <input type="text" class="input_form_profile" disabled="disabled" placeholder="Enter Encryption Key" name="key" value="<%= @user.encryption_key%>"/>
+      <%end%>
+
       <br>
-      <span class="profile_label">Confirm Encryption Key</span>
-      <input type="text" class="input_form_profile" placeholder="Re-Enter Encryption Key" name="key_confirm"/>
-      <br>
-      <input type="submit" class="update_profile_btn" name="submit" value="Update Profile">
+      <input type="submit" class="update_profile_btn" name="update_profile_submit" value="Update Profile">
+      </form>    
     </div>
-      </div>
-    </form>    
+      </div>    
   </div>
   </div>
 </body>
