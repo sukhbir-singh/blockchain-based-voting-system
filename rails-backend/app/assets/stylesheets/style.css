@@ -215,12 +215,27 @@ position: relative;
 }
 
 #logout_btn{
+  position: inline-block;
+  margin: 6px;
+  margin-left: 100px;
+  width: 100px;
+  padding: 7px;
+}
+
+#profile_edit_btn{
   position: relative;
   width: 100px;
   padding: 7px;
-  top: 50%;
-  left: 50%;
-  margin: 20px 0 0 -50px;
+  float: left;
+  bottom: 42px;
+  left: 250px;
+}
+
+#profile_btns{
+  height: 50px;
+  width: 100%;
+  padding-top: 10px;
+  position: relative;
 }
 
 #user_information p{

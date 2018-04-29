@@ -23,9 +23,16 @@
   		<p style="margin-top: 15px;"><u>Profile Information</u></p><br>
   		<p>Full Name: <%= @user.full_name %></p>
   		<p>Adhaar: <%= @user.adhaar %></p>
-  		<form action="/logout" method="post" onsubmit="return formValidation();">
-	  	 	<button id="logout_btn" onclick="submit();">Logout</button>
-	  	</form>
+
+      <div id="profile_btns">
+        <form action="/logout" method="post">
+          <button id="logout_btn" onclick="submit();">Logout</button>        
+        </form>
+        <form action="/profile">
+          <button id="profile_edit_btn">Edit Profile</button>     
+        </form>
+      </div>
+
   	</div>
   	<div id="voting_history_div">
       <% if 2+2+1 == 4%>
