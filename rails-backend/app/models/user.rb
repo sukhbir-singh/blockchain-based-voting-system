@@ -23,6 +23,7 @@ class User
   field :dob, type: Date
   field :contact, type: String
   field :password, type: String
+  field :is_active, type: Boolean, default: false
 
   def encrypt_fields    
     self.password = BCrypt::Password.create(self.password) unless self.password.blank?

@@ -270,3 +270,28 @@ ul#vote_casting_list li{
   left: 50%;
   margin: 20px 0 0 -50px;
 }
+
+.input_form_profile{
+  display: inline-block;
+  width: 300px;
+  height: 25px;
+  margin: 8px;
+}
+
+.update_profile_btn{
+  width: 200px;
+  height: 35px;
+  margin-left: 140px;
+  margin-top: 25px;
+}
+
+.profile_update_div{
+  display: inline-block;
+}
+
+.profile_label{
+  margin-left: 13px;
+  width: 200px;
+  display: inline-block;
+  font-size: 15px;
+}

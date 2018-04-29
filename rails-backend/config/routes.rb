@@ -9,4 +9,6 @@ Rails.application.routes.draw do
    post '/signup' => 'home#signup'
    post '/login' => 'home#login'
    post '/logout' => 'dashboard#logout'
+
+   post '/profile' => 'profile#update_profile'
 end

@@ -9,15 +9,31 @@
 <body>
   <div class="cont_principal">
   <div class="cont_centrar_dashboard" style="background: #fbd9d7">
-  	Name
-    Email
-    Adhaar
-    Area
-    Dob
-    Contact
-    Password
-    Encrypted Key    
-    Renter Encrypted Key    
+  	<form action="/profile" method="post">
+    <div class="profile_update_div">
+      <span class="profile_label">Name</span>
+      <input type="text" class="input_form_profile" placeholder="Update Name" name="full_name" value="<%= @user.full_name %>"/><br>
+      <span class="profile_label">Email</span>
+      <input type="text" class="input_form_profile" placeholder="Update Email" name="email" value="<%= @user.email %>"/><br>
+      <span class="profile_label">Adhaar</span>
+      <input type="text" class="input_form_profile" placeholder="Update Adhaar" name="adhaar" value="<%= @user.adhaar %>"/><br>
+      <span class="profile_label">Area</span>
+      <input type="text" class="input_form_profile" placeholder="Update Area" name="area" value="<%= @user.area %>"/><br>
+      <span class="profile_label">Dob</span>
+      <input type="text" class="input_form_profile" placeholder="Update Dob" name="dob" value="<%= @user.dob %>"/><br>      
+      <span class="profile_label">Contact</span>
+      <input type="text" class="input_form_profile" placeholder="Update Contact" name="contact"  value="<%= @user.contact %>"/>
+      <br>
+      <span class="profile_label">Encryption Key</span>
+      <input type="text" class="input_form_profile" placeholder="Enter Encryption Key" name="key"/>
+      <br>
+      <span class="profile_label">Confirm Encryption Key</span>
+      <input type="text" class="input_form_profile" placeholder="Re-Enter Encryption Key" name="key_confirm"/>
+      <br>
+      <input type="submit" class="update_profile_btn" name="submit" value="Update Profile">
+    </div>
+      </div>
+    </form>    
   </div>
   </div>
 </body>
