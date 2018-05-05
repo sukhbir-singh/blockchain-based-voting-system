@@ -8,6 +8,8 @@ Rails.application.routes.draw do
    get '/logout' => 'home#index'
    get '/profile' => 'profile#index'
    
+   get '/vote' => 'vote#index'
+   
    post '/signup' => 'home#signup'
    post '/login' => 'home#login'
    post '/logout' => 'dashboard#logout'

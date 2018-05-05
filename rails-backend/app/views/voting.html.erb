@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Blockchain Voting App</title>
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600'>
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/voting.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha1.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha1.js"></script>
+      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+      
+      <script type="text/javascript">
+
+//         web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+// json_string='[{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_encryption_key_hash","type":"string"}],"name":"addUser","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_link","type":"string"},{"name":"_ts","type":"string"},{"name":"_hash","type":"string"},{"name":"_encryption_key_hash","type":"string"}],"name":"storeLink","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"totalUsers","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_encryption_key_hash","type":"string"}],"name":"retrieveLink","outputs":[{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_encryption_key_hash","type":"string"}],"name":"_isValid","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"}]';
+
+// abi = JSON.parse(json_string);
+// VotingContract = web3.eth.contract(abi)
+// var contractInstance = VotingContract.at('0x522a57850431f66e5ac596a96ab03e4573201cfc');
+
+// // block chain work above this line
+
+// var encryption_key_hash = "";
+// var user_id="<%= @user.id.to_s %>";
+
+function voteButton(){
+  console.log("vote button clicked");
+}
+
+      </script>
+</head>
+<body>
+  <div class="cont_principal_vote">
+  <div class="cont_centrar_vote" style="background: #ead1ec">  	
+    <div class="leaders_div">
+
+    <% @leaders.each do |leader|%>
+
+      <div class="card">
+        <% if leader.sex == "male"%>
+          <%=image_tag "male.jpg", :class =>"profile_icon" %> 
+        <% else %>
+          <%=image_tag "female.jpg", :class =>"profile_icon" %> 
+        <% end %>        
+
+        <h1><%=leader[:name]%></h1>
+        <p><%=leader.party%></p>
+        <p class="title"><%=leader.area.upcase%></p>
+        <p><button class="vote_btn" id="<%= leader.id.to_s %>" onclick="voteButton()">Vote</button></p>
+     </div>
+
+    <% end %>
+
+      <div class="clear"></div>
+    </div>
+      </div>    
+  </div>
+  </div>
+</body>
+</html>

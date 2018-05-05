@@ -1,0 +1,72 @@
+.cont_centrar_vote{
+  position: relative;
+  width: 70%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 70px;
+  margin-bottom: 50px;
+  background: white;
+  border-radius: 8px;
+}
+
+.cont_principal_vote {
+  position: absolute;
+  width: 100%;
+  background-image: linear-gradient(-87deg, #F2F5F6 0%, #DDE5E8 100%);
+}
+
+.leaders_div{
+  padding: 10px;  
+  margin: 0 auto;
+  margin-left: 45px;
+}
+
+.clear{
+  clear: both;
+}
+
+.card {    
+   float: left;
+   background: #eee;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   max-width: 200px;
+   margin: auto;
+   text-align: center;
+   font-family: arial;
+   margin:5px;
+   margin-bottom: 10px;
+  }
+
+.profile_icon{
+  width: 100%;
+  height: 200px;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.vote_btn {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.vote_btn:hover, a:hover {
+  opacity: 0.7;
+}

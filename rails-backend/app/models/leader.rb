@@ -17,5 +17,8 @@ class Leader
   field :adhaar, type: String
   field :contact, type: String  
   field :email, type: String  
+  field :sex, type: String, default: 'male'
+
+  validates_inclusion_of :sex, :in => ['male','female']
 
 end
