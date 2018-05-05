@@ -136,7 +136,11 @@ function validateProfileUpdate(){
   var area= document.forms[0].area.value;
   var dob= document.forms[0].dob.value;
   var encryption_key= document.forms[0].key.value;
-  var confirm_encryption_key= document.forms[0].key_confirm.value;
+  var confirm_encryption_key= "";
+
+  if(document.forms[0].key_confirm){
+    confirm_encryption_key = document.forms[0].key_confirm.value;
+  }  
 
   if(document.forms[0].key.disabled){
     if(full_name.trim().length>0 && adhaar.trim().length>0 && area.trim().length>0 && contact.trim().length>0 && email.trim().length>0 &&dob.trim().length>0){
@@ -148,8 +152,8 @@ function validateProfileUpdate(){
         
         console.log("field enabled and response true");        
         var hash = CryptoJS.SHA1(encryption_key);
-        document.forms[0].key.value = hash;
-        document.forms[0].key_confirm.value = hash;
+        // document.forms[0].key.value = hash;
+        // document.forms[0].key_confirm.value = hash;
 
         return true;
     }      

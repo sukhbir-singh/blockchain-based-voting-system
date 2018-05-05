@@ -4,6 +4,8 @@
 #make leaders table 
 make page for voting a leader
 
+update contracts
+
 backend end point for voting a leader or update your vote
 backend end point for changing status of is_valid
 
