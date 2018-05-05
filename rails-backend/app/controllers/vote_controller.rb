@@ -23,13 +23,14 @@ class VoteController < ApplicationController
       if @user.encryption_key == params[:encryption_key]
          v = Vote.new
          v.leader_id = params[:leader_id]
-         v.generated_id = SecureRandom.uuid         
+         v.generated_id = SecureRandom.base64    
 
-         if v.save 
-            # To-Return: user_id, link, ts, hash, encryption_key_hash
+         if v.save
+            @user.update_attributes({last_voted_at:Time.now})
 
+            # To-Return: user_id, link, hash, encryption_key_hash
             render json: {message: 'vote saved in db partially', success: true, 
-               data: {link: v.generated_id, hash: v.calculate_hash, ts: v.created_at, 
+               data: {link: v.generated_id, hash: v.calculate_hash, 
                   encryption_key: params[:encryption_key] }}
 
          else

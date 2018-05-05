@@ -24,6 +24,7 @@ class User
   field :contact, type: String
   field :password, type: String
   field :encryption_key, type: String, default: nil
+  field :last_voted_at, type: DateTime, default: nil
 
   field :is_active, type: Boolean, default: false
 
