@@ -4,7 +4,65 @@
   <meta charset="UTF-8">
   <title>Blockchain Voting App</title>
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600'>
-      <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/voting.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha1.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha1.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+  <style>
+  #leader_name{
+    text-align: center;
+    font-size: 25px;
+    color: #11730a;
+  }
+  #party_name{
+    text-align: center;
+    font-size: 20px;
+    color: #599455;
+  }
+  </style>
+  <script type="text/javascript">
+
+  web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+json_string='[{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_encryption_key_hash","type":"string"}],"name":"addUser","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_hash","type":"string"}],"name":"storeHash","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_link","type":"string"}],"name":"storeLink","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"totalUsers","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_encryption_key_hash","type":"string"}],"name":"retrieveLink","outputs":[{"name":"","type":"string"},{"name":"","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_encryption_key_hash","type":"string"}],"name":"_isValid","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"}]';
+
+abi = JSON.parse(json_string);
+VotingContract = web3.eth.contract(abi)
+var contractInstance = VotingContract.at('0xf9b8a2f28addf77e182f7dcc4453d7d9986ee5eb');
+
+// block chain work above this line
+
+function last_voted_id(){
+  var user_inc_id="<%= @user.inc_id.to_s %>";
+  var encryption_key_hash="<%= @user.encryption_key.to_s %>";
+
+  var array = contractInstance.retrieveLink.call(user_inc_id, encryption_key_hash);
+  var dt = CryptoJS.AES.decrypt(array[0], encryption_key_hash);
+  generated_id = dt.toString(CryptoJS.enc.Utf8);
+
+  console.log("generated_id is: " + dt.toString(CryptoJS.enc.Utf8));  
+
+  $.get('/last_vote_info', {generated_id: generated_id}, function(response){
+    console.log(response);
+
+    if(response.is_valid == true && response.leader_name.length>0){
+      document.getElementById('not_voted_div').style.display='none';
+      document.getElementById('voted_div').style.display='block';
+
+      document.getElementById('leader_name').innerHTML=response.leader_name;
+      document.getElementById('party_name').innerHTML=response.party_name;
+    }
+    
+  });
+}
+
+window.onload = last_voted_id();
+
+</script>
 </head>
 <body>
   <div class="cont_principal">
@@ -29,23 +87,17 @@
 
   	</div>
   	<div id="voting_history_div">
-      <% if 2+2 == 4%>
+      <div id="not_voted_div">
   		<p style="margin-top: 70px;text-align:center;">You have not casted any vote yet.</p><br>
-        <a href="/vote" target="_parent"><button id="vote_now_btn" onclick="#">Vote Now!!</button></p>
-      <% else %>
-       <p style="margin-top: 10px;text-align:center;">Your Voting History</p><br>
-        <ul id="vote_casting_list">
-          <li><span class="leader_name">SpiderMan</span><span class="time_voted">10 April,18 12:02</span></li>
-          <li><span class="leader_name">Hulk</span><span class="time_voted">10 April,18 10:02</span></li>
-          <li><span class="leader_name">Captain America</span><span class="time_voted">9 April,18 20:02</span></li>
-          <li><span class="leader_name">Iron Man1</span><span class="time_voted">8 April,18 12:02</span></li>
-          <li><span class="leader_name">Iron Man2</span><span class="time_voted">8 April,18 07:02</span></li>
-          <li><span class="leader_name">Iron Man3</span><span class="time_voted">28 March,18 08:02</span></li>
-          <li><span class="leader_name">Iron Man4</span><span class="time_voted">20 March,18 11:02</span></li>
-          <li><span class="leader_name">Iron Man5</span><span class="time_voted">2 March,18 07:02</span></li>
-        </ul>
-        <button id="update_vote_btn" onclick="#">Update Your Vote</button>
-      <% end %>
+        <a href="/vote" target="_parent"><button id="vote_now_btn" onclick="#">Vote Now!!</button></p></a>
+      </div>
+
+      <div style="display: none" id="voted_div">
+       <p style="margin-top: 40px;text-align:center;">Your Last Vote</p><br>
+          <p id="leader_name">Leader 6</p>
+          <p id="party_name">BJP</p>
+        <a href="/vote" target="_parent"><button id="update_vote_btn" onclick="#">Update Your Vote</button></a>
+      </div>
   	</div>
 
   </div>

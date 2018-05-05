@@ -11,6 +11,8 @@ Rails.application.routes.draw do
    get '/vote' => 'vote#index'
    post '/vote' => 'vote#submit_vote'
    post 'update_vote_status' => 'vote#change_status'
+
+   get '/last_vote_info' => 'vote#get_voter_information'
    
    post '/signup' => 'home#signup'
    post '/login' => 'home#login'

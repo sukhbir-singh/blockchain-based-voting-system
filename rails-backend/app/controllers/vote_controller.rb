@@ -59,6 +59,24 @@ class VoteController < ApplicationController
       render json: {message: 'some error occured', success: false}
    end
 
+   def get_voter_information
+      vote = Vote.where({generated_id: params[:generated_id]}).first
+      leader = Leader.where({id: vote.leader_id}).first  rescue nil
+
+      if vote.blank?
+         render json: {message: 'invalid generated_id passed', success: false}
+         return
+      end
+
+      if leader.blank?
+         json = vote.as_json(:only => [:generated_id, :created_at, :is_valid]).merge(leader_name: '', party_name: '')
+      else
+         json = vote.as_json(:only => [:generated_id, :created_at, :is_valid]).merge(leader_name: leader.name, party_name: leader.party )
+      end
+
+      render json: json
+   end
+
    private 
 
    def vote_attributes_with_key
