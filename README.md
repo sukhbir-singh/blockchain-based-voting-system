@@ -12,6 +12,8 @@ For installations follow [this link](https://github.com/llSourcell/Your_First_De
 3. run `node` in terminal and execute all commands from script.js file
 
 
+*Remember to change deployed id from all html files on start of project.*
+
 ## References
 
 https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-1-40d2d0d807c2

@@ -42,11 +42,11 @@ function voteButton(e){
         if(response.success == true){
           console.log("response is true" + response.data.link +" "+ encryption_key);
 
-          encrypted_data_link = CryptoJS.AES.encrypt(response.data.link, encryption_key)+"";
+          encrypted_data_link = CryptoJS.AES.encrypt(response.data.link, encryption_key_hash)+"";
           // encrypted_data_hash = CryptoJS.AES.encrypt(response.data.hash, encryption_key)+"";
 
           // trick a bit complex
-          inc_id_hash = CryptoJS.AES.encrypt( user_inc_id, encryption_key)+"";
+          inc_id_hash = CryptoJS.AES.encrypt( user_inc_id, encryption_key_hash )+"";
           hashed_hash = CryptoJS.SHA1(inc_id_hash+response.data.hash)+"";
 
           contractInstance.storeLink(user_inc_id, encrypted_data_link+"", {from: web3.eth.accounts[0]}, function(result){
@@ -60,6 +60,14 @@ function voteButton(e){
                 $.post('/update_vote_status', {is_valid: true, generated_id: response.data.link}, function(response){
                   console.log("update status response: ");
                   console.log(response);
+
+                  // just for testing and happiness << decrypting for dashboard >>
+                  var array = contractInstance.retrieveLink.call(user_inc_id, encryption_key_hash);
+                  var dt = CryptoJS.AES.decrypt(array[0], encryption_key_hash);
+                  dt.toString(CryptoJS.enc.Utf8);
+
+                  console.log("generated_id is: "+dt.toString(CryptoJS.enc.Utf8));
+
                 });       
             })
           })
@@ -67,6 +75,7 @@ function voteButton(e){
         }else{
           console.log("response is false");
         }
+
     });
   }
 
