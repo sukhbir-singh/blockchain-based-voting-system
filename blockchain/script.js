@@ -13,6 +13,8 @@ deployedContract = VotingContract.new({data: byteCode, from: web3.eth.accounts[0
 deployedContract.address
 contractInstance = VotingContract.at(deployedContract.address)
 
-contractInstance.addUser('Sukhbir',{from: web3.eth.accounts[0]})
+contractInstance.addUser('Sukhbir', 'abcd',{from: web3.eth.accounts[0]})
 contractInstance.totalUsers.call()
 
+contractInstance.storeLink( "Sukhbir", "link", "ts", "hash", "abcd", {from: web3.eth.accounts[0]} )
+contractInstance.retrieveLink.call("Sukhbir", "abcd")

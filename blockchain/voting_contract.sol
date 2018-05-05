@@ -34,14 +34,13 @@ contract VotingManager {
 	}
 
 
+	// link is alias of generated_id
 	function storeLink(string _user_id, string _link, string _ts, string _hash, string _encryption_key_hash){
 
 		// check if user is present in blockchain
-		if(_isValid(_user_id, _encryption_key_hash)){
-			registry[_user_id] = dataLink(_link, _ts, _hash);
+		//require(_isValid(_user_id, _encryption_key_hash));
 
-		}
-
+		registry[_user_id] = dataLink(_link, _ts, _hash);
 	}
 
 

@@ -26,14 +26,36 @@ class VoteController < ApplicationController
          v.generated_id = SecureRandom.uuid         
 
          if v.save 
+            # To-Return: user_id, link, ts, hash, encryption_key_hash
+
             render json: {message: 'vote saved in db partially', success: true, 
-               data: {generated_id: v.generated_id, hash: v.calculate_hash}}
+               data: {link: v.generated_id, hash: v.calculate_hash, ts: v.created_at, 
+                  encryption_key: params[:encryption_key] }}
+
          else
             render json: {message: 'some error occured while saving vote in db', success: false}
+
          end         
       else
          render json: {message: 'encryption_key entered is invalid', success: false}
+
       end
+   end
+
+   def change_status
+      @user=User.find(session[:user_id])
+
+      unless @user.blank? 
+         vote = Vote.where({generated_id: params[:generated_id]}).first
+         if vote.update_attributes({ is_valid: true })
+            render json: {message: 'vote status updated in db', success: true}
+         else
+            render json: {message: 'vote status change failed', success: false}
+         end
+         return
+      end
+
+      render json: {message: 'some error occured', success: false}
    end
 
    private 

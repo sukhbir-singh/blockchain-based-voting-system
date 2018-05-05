@@ -16,16 +16,15 @@
   
   <script type="text/javascript">
 
-//         web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-// json_string='[{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_encryption_key_hash","type":"string"}],"name":"addUser","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_link","type":"string"},{"name":"_ts","type":"string"},{"name":"_hash","type":"string"},{"name":"_encryption_key_hash","type":"string"}],"name":"storeLink","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"totalUsers","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_encryption_key_hash","type":"string"}],"name":"retrieveLink","outputs":[{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_encryption_key_hash","type":"string"}],"name":"_isValid","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"}]';
+  web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+json_string='[{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_encryption_key_hash","type":"string"}],"name":"addUser","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_link","type":"string"},{"name":"_ts","type":"string"},{"name":"_hash","type":"string"},{"name":"_encryption_key_hash","type":"string"}],"name":"storeLink","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"totalUsers","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_encryption_key_hash","type":"string"}],"name":"retrieveLink","outputs":[{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"name":"_encryption_key_hash","type":"string"}],"name":"_isValid","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"}]';
 
-// abi = JSON.parse(json_string);
-// VotingContract = web3.eth.contract(abi)
-// var contractInstance = VotingContract.at('0x522a57850431f66e5ac596a96ab03e4573201cfc');
+abi = JSON.parse(json_string);
+VotingContract = web3.eth.contract(abi)
+var contractInstance = VotingContract.at('0x522a57850431f66e5ac596a96ab03e4573201cfc');
 
-// // block chain work above this line
+// block chain work above this line
 
-// var encryption_key_hash = "";
 var user_id="<%= @user.id.to_s %>";
 
 function voteButton(e){
@@ -39,8 +38,22 @@ function voteButton(e){
         console.log(response);
 
         // if success: true put (user_id, hash, encrypted_generated_id) in blockchain
+        
         if(response.success == true){
-          console.log("response is true "+user_id+" "+response.data.hash+ " "+response.data.generated_id);
+          console.log("response is true");
+
+          contractInstance.storeLink(user_id, response.data.link, response.data.ts, response.data.hash, response.data.encryption_key, {from: web3.eth.accounts[0]}, function(result){
+
+              console.log("Vote Completely saved in blockchain, now update in to database"); 
+
+              // console.log(contractInstance.retrieveLink.call(user_id, response.data.encryption_key));
+
+              // update is_valid = true in database then open dashboard page
+              $.post('/update_vote_status', {is_valid: true, generated_id: response.data.link}, function(response){
+                console.log("update status response: "+response);
+              }); 
+          } )
+
         }else{
           console.log("response is false");
         }
