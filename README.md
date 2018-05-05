@@ -11,6 +11,7 @@ For installations follow [this link](https://github.com/llSourcell/Your_First_De
 
 3. run `node` in terminal and execute all commands from script.js file
 
+**Remember:** Change contract deployed id from all html files on start of project.
 
 *Remember to change deployed id from all html files on start of project.*
 
