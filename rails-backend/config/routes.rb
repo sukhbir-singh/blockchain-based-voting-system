@@ -9,6 +9,7 @@ Rails.application.routes.draw do
    get '/profile' => 'profile#index'
    
    get '/vote' => 'vote#index'
+   post '/vote' => 'vote#submit_vote'
    
    post '/signup' => 'home#signup'
    post '/login' => 'home#login'
