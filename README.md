@@ -13,7 +13,7 @@ For installations follow [this link](https://github.com/llSourcell/Your_First_De
 
 **Remember:** Change contract deployed id from all html files on start of project.
 
-*Remember to change deployed id from all html files on start of project.*
+**Remember to change deployed id in blockchain.js file on start of project and keep connected to internet.**
 
 ## References
 

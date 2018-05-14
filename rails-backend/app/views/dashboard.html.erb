@@ -25,6 +25,8 @@
     color: #599455;
   }
   </style>
+  <script src="js/blockchain.js"></script>
+  
   <script type="text/javascript">
 
   web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
@@ -32,7 +34,7 @@ json_string='[{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"
 
 abi = JSON.parse(json_string);
 VotingContract = web3.eth.contract(abi)
-var contractInstance = VotingContract.at('0xf9b8a2f28addf77e182f7dcc4453d7d9986ee5eb');
+var contractInstance = VotingContract.at(getDeployedAddress());
 
 // block chain work above this line
 

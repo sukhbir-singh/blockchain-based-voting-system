@@ -1,0 +1,21 @@
+
+Todos
+
+1. get data from backend upto-votes allocated after server started
+
+2. Automate some things after first time server starts like :-
+*remove encryption key from all users from backend 
+*clear all votes till now
+
+3. Improve front-end of:- 
+*login page
+*dashboard
+*voting page
+*edit profile page
+
+
+4. Implement vote count and showing feature in dashboard
+
+
+
+

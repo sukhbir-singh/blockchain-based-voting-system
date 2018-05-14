@@ -13,6 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha1.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+  <script src="js/blockchain.js"></script>
   
   <script type="text/javascript">
 
@@ -21,7 +22,7 @@ json_string='[{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"
 
 abi = JSON.parse(json_string);
 VotingContract = web3.eth.contract(abi)
-var contractInstance = VotingContract.at('0xf9b8a2f28addf77e182f7dcc4453d7d9986ee5eb');
+var contractInstance = VotingContract.at(getDeployedAddress());
 
 // block chain work above this line
 
