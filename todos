@@ -19,3 +19,47 @@ Todos
 
 
 
+--------------------------------------------------------
+
+> Terminal Commands:--
+
+//Firstly, connect to internet
+
+cd blockchain/node_modules/ethereumjs-testrpc/build/ 
+node cli.node.js
+
+cd blockchain
+node 
+// use script.js file 
+
+// replace address in blockchain.js file
+// start mongod, robomongo and start rails server
+
+sudo mongod
+robomongo
+
+cd rails-backend
+rake reset_db
+rails s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
