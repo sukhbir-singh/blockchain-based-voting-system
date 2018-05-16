@@ -1,0 +1,66 @@
+.profile_page_form{
+	margin: 0 auto;
+	width: 100%;
+	display: inline-block;
+	top: 50%;
+	left: 50%;
+	marker-left:70px;
+}
+
+.profile_page_form input{
+	padding:5px;
+	margin:10px;
+	font-size: 15px;	
+}
+
+.profile_update_div{
+	width:800px; 
+	margin-left: 20px;
+	text-align: center;
+	margin:0 auto;
+	display: inline-block;
+}
+
+.profile_label{
+	margin-left: 13px;
+    width: 180px;
+    display: inline-block;
+    font-size: 15px;
+    text-align: left;
+}
+
+.input_form_profile{
+  display: inline-block;
+  width: 300px;
+  height: 25px;
+  margin: 8px;
+}
+
+.update_profile_btn{
+  width: 300px;
+  height: 40px;
+  margin-left: 140px;
+  margin-top: 25px;
+}
+
+.cont_centrar_profile{
+  position: relative;
+  width: 70%;
+  height: auto;
+  padding: 15px;
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  background: #06d6b947;
+  border-radius: 8px;
+}
+
+.static_home{
+	position: fixed; 
+	left:10px;
+}
+
+.static_logout{
+	position: fixed;	
+	right:10px;
+}

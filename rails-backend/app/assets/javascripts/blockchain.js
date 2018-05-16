@@ -1,3 +1,3 @@
 function getDeployedAddress(){
-	return '0xc6491070d132ead8b0185a62d2035df458ae4d16';
+	return '0xf76413b3a101d973b606981194bfed7d109aa551';
 }
