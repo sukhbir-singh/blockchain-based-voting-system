@@ -36,6 +36,7 @@ json_string='[{"constant":false,"inputs":[{"name":"_user_id","type":"string"},{"
 abi = JSON.parse(json_string);
 VotingContract = web3.eth.contract(abi)
 var contractInstance = VotingContract.at(getDeployedAddress());
+var encryption_key_hash="<%= @user.encryption_key.to_s %>";
 
 // block chain work above this line
 
@@ -61,6 +62,15 @@ function last_voted_id(){
     }
     
   });
+}
+
+function openVotePage(){
+  if(encryption_key_hash.length>3){
+    window.open("/vote","_self");  
+  }else{
+    alert('Please update your Profile first');
+  }
+  
 }
 
 window.onload = last_voted_id();
@@ -94,14 +104,14 @@ window.onload = last_voted_id();
   	<div id="voting_history_div">
       <div id="not_voted_div">
   		<p style="margin-top: 70px;text-align:center;">You have not casted any vote yet.</p><br>
-        <a href="/vote" target="_parent"><button id="vote_now_btn" onclick="#">Vote Now!!</button></p></a>
+        <button id="vote_now_btn" onclick="openVotePage()">Vote Now!!</button></p>
       </div>
 
       <div style="display: none" id="voted_div">
        <p style="margin-top: 40px;text-align:center;">Your Last Vote</p><br>
           <p id="leader_name">Leader 6</p>
           <p id="party_name">BJP</p>
-        <a href="/vote" target="_parent"><button id="update_vote_btn" onclick="#">Update Your Vote</button></a>
+        <button id="update_vote_btn" onclick="openVotePage()">Update Your Vote</button>
       </div>
   	</div>
 

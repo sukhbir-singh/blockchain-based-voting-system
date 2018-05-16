@@ -1,17 +1,12 @@
 
 Todos:-
 
-2. Implement disabling last vote of user on updating vote
-
-3. login for only is_valid user on portal
-
-4. Improve front-end of:- 
+Improve front-end of:- 
 	*login page
 	*dashboard
 	*voting page
 	*edit profile page
 
-5. Implement vote count (only latest vote)
 
 
 
