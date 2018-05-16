@@ -14,17 +14,77 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha1.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
-  <style>
-  #leader_name{
-    text-align: center;
+  <style>  
+  #real_time_voting{
+    position: relative;
+    background: #fff;
+    height: 50%;
+    float:left;
+    width: 50%;
+  }
+
+  #myChart{
+    padding: 10px;
+    position: relative;
+  } 
+
+  #user_information{
+    position: relative;
+    background: #ffa500b8;
+    width: 480px;
+    margin-left: 20px;
+    float: left;
+    height: 50%;
+    padding-top: 30px;
+  }
+
+  #voting_history_div{
+    background: #ffff00bf;
+    position: relative;
+    width: 480px;
+    margin-left: 20px;
+    float: left;
+    margin-top: 10px;
+    height: 240px;
+  }
+
+  .profile_info_title{
+    text-transform: uppercase;
+    text-decoration: none;
     font-size: 25px;
-    color: #11730a;
+    margin-top: 10px;
   }
-  #party_name{
+
+  .last_voted_title{
+    margin-top: 80px;
+    font-size: 25px;
+    text-align:center;
+    text-transform: uppercase;
+  }
+
+  #last_vote_text{
     text-align: center;
-    font-size: 20px;
-    color: #599455;
+    margin-top: 50px;
   }
+
+  #leader_name{
+    font-size: 23px;
+    /*color: #11730a;*/
+  }
+
+  #party_name{
+    font-size: 20px;
+    /*color: #599455;*/
+  }
+
+  .leader_name{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: inline-block;
+    max-width: 20px;
+  }
+
   </style>
   <script src="js/blockchain.js"></script>
   
@@ -82,12 +142,11 @@ window.onload = last_voted_id();
   <div class="cont_centrar_dashboard">
   	
   	<div id="real_time_voting">
-      <!-- <p style="margin-top: 0 auto;">No Votes Yet</p> -->
-      <canvas id="myChart" width="350" height="350"></canvas>
+      <canvas id="myChart" width="auto" height="280px"></canvas>
   	</div>
 
   	<div id="user_information">
-  		<p style="margin-top: 15px;"><u>Profile Information</u></p><br>
+  		<p class="profile_info_title">Profile Information</p><br>
   		<p>Full Name: <%= @user.full_name %></p>
   		<p>Adhaar: <%= @user.adhaar %></p>
 
@@ -104,17 +163,16 @@ window.onload = last_voted_id();
   	<div id="voting_history_div">
       <div id="not_voted_div">
   		<p style="margin-top: 70px;text-align:center;">You have not casted any vote yet.</p><br>
-        <button id="vote_now_btn" onclick="openVotePage()">Vote Now!!</button></p>
+        <button id="vote_now_btn" onclick="openVotePage()">Vote Now!!</button>
       </div>
 
       <div style="display: none" id="voted_div">
-       <p style="margin-top: 40px;text-align:center;">Your Last Vote</p><br>
-          <p id="leader_name">Leader 6</p>
-          <p id="party_name">BJP</p>
+       <p class="last_vote_title"></p><br>
+          <p id="last_vote_text">Your Last Vote: <span id="leader_name">Leader 6</span> (<span id="party_name">BJP</span>)</p>
         <button id="update_vote_btn" onclick="openVotePage()">Update Your Vote</button>
       </div>
   	</div>
-
+      
   </div>
   </div>
 
@@ -136,9 +194,21 @@ window.onload = last_voted_id();
                     'rgba(255, 206, 86, 0.8)',
                     'rgba(75, 192, 192, 0.8)',
                     'rgba(153, 102, 255, 0.8)',
+                    'rgba(255, 159, 64, 0.8)',
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(75, 192, 192, 0.8)',
+                    'rgba(153, 102, 255, 0.8)',
                     'rgba(255, 159, 64, 0.8)'
                 ],
                 borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
                     'rgba(255,99,132,1)',
                     'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)',

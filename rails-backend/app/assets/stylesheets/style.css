@@ -108,11 +108,11 @@ position: relative;
   font-size: 14px;
   outline: none;
   transition: all 0.5s;
-    height: 0px;
-    margin: 0px;
-    padding: 0px;  
-opacity: 0;
-display: none;
+  height: 0px;
+  margin: 0px;
+  padding: 0px;  
+  opacity: 0;
+  display: none;
 }
 
 .active_inp {
@@ -189,44 +189,22 @@ position: relative;
 }
  
 .cont_centrar_dashboard{
-  position: relative;
-  width: 70%;
-  height: 450px;
-  margin: 0 auto;
-  margin-top: 100px;
+  position: absolute;
   background: white;
   border-radius: 8px;
-}
-
-#real_time_voting{
-  background: #fff;
-  width: 200px;
-  height: 100px;
-  float:left;
-  height: 100%;
-  width: 50%;
-}
-
-#user_information{
-  background: orange;
-  width: 200px;
-  height: 100px;
-  float:left;
-  width: 50%;
-  height: 170px;  
-}
-
-#voting_history_div{
-  background: yellow;
-  float:left;  
-  width: 50%;
-  height: calc(100% - 170px);
+  padding: 10px;
+  margin-top: -280px;
+  margin-left: -500px;
+  left:50%;
+  top:50%;
+  width: 1000px;
+  clear:both;
 }
 
 #logout_btn{
   position: inline-block;
   margin: 6px;
-  margin-left: 100px;
+  margin-left: 130px;
   width: 100px;
   padding: 7px;
 }
@@ -237,7 +215,7 @@ position: relative;
   padding: 7px;
   float: left;
   bottom: 42px;
-  left: 250px;
+  left: 255px;
 }
 
 #profile_btns{
@@ -262,14 +240,6 @@ ul#vote_casting_list li{
   list-style-type: none;
   padding: 5px;
   background: white;  
-}
-
-.leader_name{
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  position: inline-block;
-  max-width: 20px;
 }
 
 .time_voted{
