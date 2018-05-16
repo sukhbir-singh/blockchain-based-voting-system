@@ -7,6 +7,8 @@ Rails.application.routes.draw do
    get '/login' => 'home#index'
    get '/logout' => 'home#index'
    get '/profile' => 'profile#index'
+
+   get '/all_votes' => 'dashboard#get_valid_votes'
    
    get '/vote' => 'vote#index'
    post '/vote' => 'vote#submit_vote'

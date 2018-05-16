@@ -190,7 +190,7 @@ position: relative;
 }
 
 #real_time_voting{
-  background: green;
+  background: #fff;
   width: 200px;
   height: 100px;
   float:left;

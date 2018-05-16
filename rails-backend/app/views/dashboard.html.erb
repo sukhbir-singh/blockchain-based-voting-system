@@ -6,6 +6,7 @@
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600'>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/voting.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha1.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -60,6 +61,13 @@ function last_voted_id(){
     }
     
   });
+
+  $.get('/all_votes', function(response){
+    if(response.success == true && response.data.length>0){
+      draw(response.data);
+    }
+    
+  });
 }
 
 window.onload = last_voted_id();
@@ -71,8 +79,9 @@ window.onload = last_voted_id();
   <div class="cont_centrar_dashboard">
   	
   	<div id="real_time_voting">
-
+      <canvas id="myChart" width="350" height="350"></canvas>
   	</div>
+
   	<div id="user_information">
   		<p style="margin-top: 15px;"><u>Profile Information</u></p><br>
   		<p>Full Name: <%= @user.full_name %></p>
@@ -104,5 +113,67 @@ window.onload = last_voted_id();
 
   </div>
   </div>
+
+  <script>
+
+  function draw(data){
+    var ctx = document.getElementById("myChart").getContext('2d');
+
+    var dict={};
+
+    for(var i=0;i<data.length;i++){
+      if(dict[data[i].name]>0){
+        dict[data[i].name]++;  
+      }else{
+        dict[data[i].name]=0;  
+      }
+      
+    }
+
+    console.log(dict);
+
+    data = {
+            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(75, 192, 192, 0.8)',
+                    'rgba(153, 102, 255, 0.8)',
+                    'rgba(255, 159, 64, 0.8)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: data,
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });  
+  }
+  
+  </script>
+
 </body>
 </html>
