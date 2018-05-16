@@ -28,7 +28,20 @@ var contractInstance = VotingContract.at(getDeployedAddress());
 
 var user_inc_id="<%= @user.inc_id.to_s %>";
 
+function get_last_voted_link(){
+  var encryption_key_hash="<%= @user.encryption_key.to_s %>";
+
+  var array = contractInstance.retrieveLink.call(user_inc_id, encryption_key_hash);
+  var dt = CryptoJS.AES.decrypt(array[0], encryption_key_hash);
+  generated_id = dt.toString(CryptoJS.enc.Utf8);
+  return generated_id;
+}
+
+//main vote functionality
+
 function voteButton(e){
+  var old_generated_id = get_last_voted_link();
+
   encryption_key = prompt("Enter your Encryption Key");
 
   if(encryption_key.length!=0){
@@ -58,7 +71,10 @@ function voteButton(e){
 
                 console.log("Both link and hash saved in blockchain, now update in to database");   
 
-                $.post('/update_vote_status', {is_valid: true, generated_id: response.data.link}, function(response){
+                // update vote status
+                $.post('/update_vote_status', {is_valid: true, generated_id: response.data.link,
+                  old_generated_id: old_generated_id
+                }, function(response){
                   console.log("update status response: ");
                   console.log(response);
 

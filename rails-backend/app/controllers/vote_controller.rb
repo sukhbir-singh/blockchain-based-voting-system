@@ -47,8 +47,11 @@ class VoteController < ApplicationController
       @user=User.find(session[:user_id])
 
       unless @user.blank? 
-         vote = Vote.where({generated_id: params[:generated_id]}).first
-         if vote.update_attributes({ is_valid: true })
+         new_vote = Vote.where({generated_id: params[:generated_id]}).first rescue nil
+         old_vote = Vote.where({generated_id: params[:old_generated_id]}).first rescue nil
+
+         if new_vote.update_attributes({ is_valid: true }) 
+            old_vote.update_attributes({ is_valid: false }) unless old_vote.blank?
             render json: {message: 'vote status updated in db', success: true}
          else
             render json: {message: 'vote status change failed', success: false}
