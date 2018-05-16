@@ -1,21 +1,19 @@
 
-Todos
+Todos:-
 
-1. get data from backend upto-votes allocated after server started
+1. make pie chart dynamic
 
-2. Automate some things after first time server starts like :-
-*remove encryption key from all users from backend 
-*clear all votes till now
+2. Implement disabling last vote of user on updating vote
 
-3. Improve front-end of:- 
-*login page
-*dashboard
-*voting page
-*edit profile page
+3. login for only is_valid user on portal
 
+4. Improve front-end of:- 
+	*login page
+	*dashboard
+	*voting page
+	*edit profile page
 
-4. Implement vote count and showing feature in dashboard
-
+5. Implement vote count (only latest vote)
 
 
 

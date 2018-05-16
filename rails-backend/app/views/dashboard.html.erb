@@ -6,7 +6,7 @@
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600'>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/voting.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <script src="js/Chart.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha1.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -61,13 +61,6 @@ function last_voted_id(){
     }
     
   });
-
-  $.get('/all_votes', function(response){
-    if(response.success == true && response.data.length>0){
-      draw(response.data);
-    }
-    
-  });
 }
 
 window.onload = last_voted_id();
@@ -79,6 +72,7 @@ window.onload = last_voted_id();
   <div class="cont_centrar_dashboard">
   	
   	<div id="real_time_voting">
+      <!-- <p style="margin-top: 0 auto;">No Votes Yet</p> -->
       <canvas id="myChart" width="350" height="350"></canvas>
   	</div>
 
@@ -116,28 +110,16 @@ window.onload = last_voted_id();
 
   <script>
 
-  function draw(data){
+  function draw(leaders){
     var ctx = document.getElementById("myChart").getContext('2d');
-
-    var dict={};
-
-    for(var i=0;i<data.length;i++){
-      if(dict[data[i].name]>0){
-        dict[data[i].name]++;  
-      }else{
-        dict[data[i].name]=0;  
-      }
-      
-    }
-
-    console.log(dict);
+    var graph_data = leaders.graph_data;
 
     data = {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: graph_data.leaders,
 
             datasets: [{
                 label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                data: graph_data.leader_counts,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.8)',
                     'rgba(54, 162, 235, 0.8)',
@@ -172,6 +154,18 @@ window.onload = last_voted_id();
         }
     });  
   }
+
+  function fetchAndDraw(){
+    $.get('/all_votes', function(response){
+      console.log(response);
+      if(response.success == true){
+        draw(response);
+      }
+      
+    });
+  }
+
+  window.onload = fetchAndDraw();
   
   </script>
 
