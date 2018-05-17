@@ -8,10 +8,15 @@ class HomeController < ApplicationController
          render template: 'home'
       else
          @user=User.find(session[:user_id]) rescue nil 
-         if @user.blank?            
+         if @user.blank?          
             render template: 'home'  
          else
             render template: 'dashboard'
+            # if @user.is_active
+               
+            # else
+            #    render template: 'home'    
+            # end
          end
       end
    end
@@ -22,11 +27,12 @@ class HomeController < ApplicationController
          u= User.new(full_name: params[:full_name], email: params[:email], adhaar: params[:adhaar], area: params[:area], dob: params[:dob], contact: params[:contact], password: params[:password], image: params[:image] )
          
          if u.save
-            u = User.where({email: params[:email], adhaar: params[:adhaar]}).first
-            session[:user_id] = u.id
+            # u = User.where({email: params[:email], adhaar: params[:adhaar]}).first
+            # session[:user_id] = u.id
             
-            @user = u
-            render template: 'dashboard'
+            # @user = u
+            # render template: 'dashboard'
+            redirect_to home_path
          else
             render template: 'home'
          end         
@@ -39,7 +45,7 @@ class HomeController < ApplicationController
       unless params[:email].blank? || params[:password].blank? 
          u = User.where(email: params[:email]).first
          unless u.blank?
-            if params[:password] == AES.decrypt(u.password, AES_KEY)
+            if params[:password] == AES.decrypt(u.password, AES_KEY) && u.is_active
                session[:user_id] = u.id
                @user = u
                render template: 'dashboard'
