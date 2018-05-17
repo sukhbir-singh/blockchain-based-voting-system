@@ -123,7 +123,7 @@ function voteButton(e){
           <%=image_tag "female.jpg", :class =>"profile_icon" %> 
         <% end %>        
 
-        <h1><%=leader[:name]%></h1>
+        <h1 style="max-height: 40px; font-size: 25px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;"><%=leader[:name]%></h1>
         <p><%=leader.party%></p>
         <p class="title"><%=leader.area.upcase%></p>
         <p><button class="vote_btn" id="<%= leader.id.to_s %>" onclick="voteButton(this)">Vote</button></p>

@@ -8,6 +8,7 @@ Improve front-end of:-
 	*edit profile page
 
 
+//Leader.new({name:'' , party: '', area:'',  adhaar: '',  contact:'', email:'', sex:''}).save
 
 
 --------------------------------------------------------
